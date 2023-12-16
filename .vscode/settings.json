@@ -55,5 +55,21 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.associations": {
+    "test.h": "c",
+    "vulkan_core.h": "c",
+    "stdio.h": "c",
+    "window_handler.h": "c",
+    "main.h": "c",
+    "mat4x4.hpp": "c",
+    "vec4.hpp": "c",
+    "matrix_float4x4.hpp": "c",
+    "matrix_double4x4_precision.hpp": "c",
+    "matrix_double4x4.hpp": "c",
+    "__config": "c",
+    "glfw3.h": "c",
+    "vulkan.h": "c",
+    "defines.h": "c"
+  }
 }
