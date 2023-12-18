@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -72,19 +72,19 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_42d87/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_42d87.dir\\build.make CMakeFiles/cmTC_42d87.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm'
-        Building C object CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj
-        C:\\mingw64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_42d87.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_42d87.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_5907f/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5907f.dir\\build.make CMakeFiles/cmTC_5907f.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8'
+        Building C object CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj
+        C:\\mingw64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_5907f.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_5907f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
         clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/mingw64/bin
          (in-process)
-         "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_42d87.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_42d87.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"
+         "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8 -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_5907f.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8 -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_5907f.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"
         clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target x86_64-w64-mingw32
         ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include"
         ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/usr/include"
@@ -93,17 +93,17 @@ events:
          C:/mingw64/lib/clang/17/include
          C:/mingw64/include
         End of search list.
-        Linking C executable cmTC_42d87.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_42d87.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_42d87.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_42d87.dir/objects.a @CMakeFiles\\cmTC_42d87.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -v -Wl,--whole-archive CMakeFiles\\cmTC_42d87.dir/objects.a -Wl,--no-whole-archive -o cmTC_42d87.exe -Wl,--out-implib,libcmTC_42d87.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+        Linking C executable cmTC_5907f.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5907f.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5907f.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5907f.dir/objects.a @CMakeFiles\\cmTC_5907f.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -v -Wl,--whole-archive CMakeFiles\\cmTC_5907f.dir/objects.a -Wl,--no-whole-archive -o cmTC_5907f.exe -Wl,--out-implib,libcmTC_5907f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
         clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/mingw64/bin
-         "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_42d87.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_42d87.dir/objects.a" --no-whole-archive --out-implib libcmTC_42d87.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm'
+         "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_5907f.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_5907f.dir/objects.a" --no-whole-archive --out-implib libcmTC_5907f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8'
         
       exitCode: 0
   -
@@ -133,19 +133,19 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.lld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm']
+        ignore line: [Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_42d87/fast]
-        ignore line: [C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_42d87.dir\\build.make CMakeFiles/cmTC_42d87.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm']
-        ignore line: [Building C object CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\mingw64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_42d87.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_42d87.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_5907f/fast]
+        ignore line: [C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5907f.dir\\build.make CMakeFiles/cmTC_5907f.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8']
+        ignore line: [Building C object CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\mingw64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_5907f.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_5907f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"]
         ignore line: [clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/mingw64/bin]
         ignore line: [ (in-process)]
-        ignore line: [ "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_42d87.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_42d87.dir/CMakeCCompilerABI.c.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-e3kggm -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_42d87.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"]
+        ignore line: [ "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8 -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_5907f.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_5907f.dir/CMakeCCompilerABI.c.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-3clth8 -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_5907f.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCCompilerABI.c"]
         ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target x86_64-w64-mingw32]
         ignore line: [ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include"]
         ignore line: [ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/usr/include"]
@@ -154,22 +154,22 @@ events:
         ignore line: [ C:/mingw64/lib/clang/17/include]
         ignore line: [ C:/mingw64/include]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_42d87.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_42d87.dir\\link.txt --verbose=1]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_42d87.dir/objects.a]
-        ignore line: [C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_42d87.dir/objects.a @CMakeFiles\\cmTC_42d87.dir\\objects1.rsp]
-        ignore line: [C:\\mingw64\\bin\\cc.exe  -v -Wl --whole-archive CMakeFiles\\cmTC_42d87.dir/objects.a -Wl --no-whole-archive -o cmTC_42d87.exe -Wl --out-implib libcmTC_42d87.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+        ignore line: [Linking C executable cmTC_5907f.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5907f.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5907f.dir/objects.a]
+        ignore line: [C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5907f.dir/objects.a @CMakeFiles\\cmTC_5907f.dir\\objects1.rsp]
+        ignore line: [C:\\mingw64\\bin\\cc.exe  -v -Wl --whole-archive CMakeFiles\\cmTC_5907f.dir/objects.a -Wl --no-whole-archive -o cmTC_5907f.exe -Wl --out-implib libcmTC_5907f.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
         ignore line: [clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/mingw64/bin]
-        link line: [ "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_42d87.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_42d87.dir/objects.a" --no-whole-archive --out-implib libcmTC_42d87.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o]
+        link line: [ "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_5907f.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_5907f.dir/objects.a" --no-whole-archive --out-implib libcmTC_5907f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o]
           arg [C:/mingw64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_42d87.exe] ==> ignore
+          arg [cmTC_5907f.exe] ==> ignore
           arg [C:/mingw64/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/mingw64/x86_64-w64-mingw32/lib/crt2.o]
           arg [C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o]
           arg [-LC:/mingw64/x86_64-w64-mingw32/lib] ==> dir [C:/mingw64/x86_64-w64-mingw32/lib]
@@ -177,10 +177,10 @@ events:
           arg [-LC:/mingw64/lib] ==> dir [C:/mingw64/lib]
           arg [-LC:/mingw64/lib/clang/17/lib/windows] ==> dir [C:/mingw64/lib/clang/17/lib/windows]
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\\\cmTC_42d87.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\\\cmTC_5907f.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_42d87.dll.a] ==> ignore
+          arg [libcmTC_5907f.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -226,8 +226,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -237,19 +237,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_5daf7/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5daf7.dir\\build.make CMakeFiles/cmTC_5daf7.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez'
-        Building CXX object CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\mingw64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_5daf7.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_5daf7.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_978cb/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_978cb.dir\\build.make CMakeFiles/cmTC_978cb.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n'
+        Building CXX object CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\mingw64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_978cb.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_978cb.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
         clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/mingw64/bin
          (in-process)
-         "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_5daf7.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/mingw64/include/c++/v1 -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_5daf7.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"
+         "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_978cb.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/mingw64/include/c++/v1 -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_978cb.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"
         clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target x86_64-w64-mingw32
         ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include/c++/v1"
         ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include"
@@ -260,17 +260,17 @@ events:
          C:/mingw64/lib/clang/17/include
          C:/mingw64/include
         End of search list.
-        Linking CXX executable cmTC_5daf7.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5daf7.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5daf7.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5daf7.dir/objects.a @CMakeFiles\\cmTC_5daf7.dir\\objects1.rsp
-        C:\\mingw64\\bin\\c++.exe  -v -Wl,--whole-archive CMakeFiles\\cmTC_5daf7.dir/objects.a -Wl,--no-whole-archive -o cmTC_5daf7.exe -Wl,--out-implib,libcmTC_5daf7.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+        Linking CXX executable cmTC_978cb.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_978cb.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_978cb.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_978cb.dir/objects.a @CMakeFiles\\cmTC_978cb.dir\\objects1.rsp
+        C:\\mingw64\\bin\\c++.exe  -v -Wl,--whole-archive CMakeFiles\\cmTC_978cb.dir/objects.a -Wl,--no-whole-archive -o cmTC_978cb.exe -Wl,--out-implib,libcmTC_978cb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
         clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/mingw64/bin
-         "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_5daf7.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_5daf7.dir/objects.a" --no-whole-archive --out-implib libcmTC_5daf7.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez'
+         "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_978cb.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_978cb.dir/objects.a" --no-whole-archive --out-implib libcmTC_978cb.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n'
         
       exitCode: 0
   -
@@ -302,19 +302,19 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.lld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez']
+        ignore line: [Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_5daf7/fast]
-        ignore line: [C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5daf7.dir\\build.make CMakeFiles/cmTC_5daf7.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez']
-        ignore line: [Building CXX object CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\mingw64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_5daf7.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_5daf7.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_978cb/fast]
+        ignore line: [C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_978cb.dir\\build.make CMakeFiles/cmTC_978cb.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n']
+        ignore line: [Building CXX object CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\mingw64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_978cb.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles\\cmTC_978cb.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/mingw64/bin]
         ignore line: [ (in-process)]
-        ignore line: [ "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_5daf7.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_5daf7.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/mingw64/include/c++/v1 -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fm42ez -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_5daf7.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [ "C:/mingw64/bin/clang-17.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n -resource-dir C:/mingw64/lib/clang/17 -dependency-file "CMakeFiles\\\\cmTC_978cb.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_978cb.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -canonical-system-headers -internal-isystem C:/mingw64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/mingw64/include/c++/v1 -internal-isystem C:/mingw64/lib/clang/17/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/include -internal-isystem C:/mingw64/x86_64-w64-mingw32/usr/include -internal-isystem C:/mingw64/include -fdeprecated-macro -fdebug-compilation-dir=C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-orw12n -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_978cb.dir\\\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.28\\\\Modules\\\\CMakeCXXCompilerABI.cpp"]
         ignore line: [clang -cc1 version 17.0.5 based upon LLVM 17.0.5 default target x86_64-w64-mingw32]
         ignore line: [ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include/c++/v1"]
         ignore line: [ignoring nonexistent directory "C:/mingw64/x86_64-w64-mingw32/include"]
@@ -325,22 +325,22 @@ events:
         ignore line: [ C:/mingw64/lib/clang/17/include]
         ignore line: [ C:/mingw64/include]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_5daf7.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5daf7.dir\\link.txt --verbose=1]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5daf7.dir/objects.a]
-        ignore line: [C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_5daf7.dir/objects.a @CMakeFiles\\cmTC_5daf7.dir\\objects1.rsp]
-        ignore line: [C:\\mingw64\\bin\\c++.exe  -v -Wl --whole-archive CMakeFiles\\cmTC_5daf7.dir/objects.a -Wl --no-whole-archive -o cmTC_5daf7.exe -Wl --out-implib libcmTC_5daf7.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+        ignore line: [Linking CXX executable cmTC_978cb.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_978cb.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_978cb.dir/objects.a]
+        ignore line: [C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_978cb.dir/objects.a @CMakeFiles\\cmTC_978cb.dir\\objects1.rsp]
+        ignore line: [C:\\mingw64\\bin\\c++.exe  -v -Wl --whole-archive CMakeFiles\\cmTC_978cb.dir/objects.a -Wl --no-whole-archive -o cmTC_978cb.exe -Wl --out-implib libcmTC_978cb.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
         ignore line: [clang version 17.0.5 (https://github.com/llvm/llvm-project.git 98bfdac5ce82d1679f8af9a57501471812ab68d7)]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/mingw64/bin]
-        link line: [ "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_5daf7.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_5daf7.dir/objects.a" --no-whole-archive --out-implib libcmTC_5daf7.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o]
+        link line: [ "C:/mingw64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_978cb.exe C:/mingw64/x86_64-w64-mingw32/lib/crt2.o C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/mingw64/x86_64-w64-mingw32/lib -LC:/mingw64/x86_64-w64-mingw32/mingw/lib -LC:/mingw64/lib -LC:/mingw64/lib/clang/17/lib/windows --whole-archive "CMakeFiles\\\\cmTC_978cb.dir/objects.a" --no-whole-archive --out-implib libcmTC_978cb.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/mingw64/lib/clang/17/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/mingw64/x86_64-w64-mingw32/lib/crtend.o]
           arg [C:/mingw64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_5daf7.exe] ==> ignore
+          arg [cmTC_978cb.exe] ==> ignore
           arg [C:/mingw64/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/mingw64/x86_64-w64-mingw32/lib/crt2.o]
           arg [C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/mingw64/x86_64-w64-mingw32/lib/crtbegin.o]
           arg [-LC:/mingw64/x86_64-w64-mingw32/lib] ==> dir [C:/mingw64/x86_64-w64-mingw32/lib]
@@ -348,10 +348,10 @@ events:
           arg [-LC:/mingw64/lib] ==> dir [C:/mingw64/lib]
           arg [-LC:/mingw64/lib/clang/17/lib/windows] ==> dir [C:/mingw64/lib/clang/17/lib/windows]
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\\\cmTC_5daf7.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\\\cmTC_978cb.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_5daf7.dll.a] ==> ignore
+          arg [libcmTC_978cb.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -400,8 +400,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xxpzrs"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xxpzrs"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-l14jq3"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-l14jq3"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -412,18 +412,18 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xxpzrs'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-l14jq3'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_4e286/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4e286.dir\\build.make CMakeFiles/cmTC_4e286.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xxpzrs'
-        Building C object CMakeFiles/cmTC_4e286.dir/src.c.obj
-        C:\\mingw64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_4e286.dir/src.c.obj -MF CMakeFiles\\cmTC_4e286.dir\\src.c.obj.d -o CMakeFiles\\cmTC_4e286.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xxpzrs\\src.c
-        Linking C executable cmTC_4e286.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4e286.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4e286.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_4e286.dir/objects.a @CMakeFiles\\cmTC_4e286.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_4e286.dir/objects.a -Wl,--no-whole-archive -o cmTC_4e286.exe -Wl,--out-implib,libcmTC_4e286.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_4e286.dir\\linkLibs.rsp
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_40e5a/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_40e5a.dir\\build.make CMakeFiles/cmTC_40e5a.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-l14jq3'
+        Building C object CMakeFiles/cmTC_40e5a.dir/src.c.obj
+        C:\\mingw64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_40e5a.dir/src.c.obj -MF CMakeFiles\\cmTC_40e5a.dir\\src.c.obj.d -o CMakeFiles\\cmTC_40e5a.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l14jq3\\src.c
+        Linking C executable cmTC_40e5a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_40e5a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_40e5a.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_40e5a.dir/objects.a @CMakeFiles\\cmTC_40e5a.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_40e5a.dir/objects.a -Wl,--no-whole-archive -o cmTC_40e5a.exe -Wl,--out-implib,libcmTC_40e5a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_40e5a.dir\\linkLibs.rsp
         ld.lld: error: undefined symbol: pthread_create
         >>> referenced by objects.a(src.c.obj):(main)
         
@@ -439,9 +439,9 @@ events:
         ld.lld: error: undefined symbol: pthread_exit
         >>> referenced by objects.a(src.c.obj):(main)
         clang-17: error: linker command failed with exit code 1 (use -v to see invocation)
-        mingw32-make[1]: *** [CMakeFiles\\cmTC_4e286.dir\\build.make:101: cmTC_4e286.exe] Error 1
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xxpzrs'
-        mingw32-make: *** [Makefile:126: cmTC_4e286/fast] Error 2
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_40e5a.dir\\build.make:101: cmTC_40e5a.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-l14jq3'
+        mingw32-make: *** [Makefile:126: cmTC_40e5a/fast] Error 2
         
       exitCode: 2
   -
@@ -454,8 +454,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ibfmp4"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ibfmp4"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-6qggrc"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-6qggrc"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -466,23 +466,23 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ibfmp4'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-6qggrc'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_13157/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_13157.dir\\build.make CMakeFiles/cmTC_13157.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ibfmp4'
-        Building C object CMakeFiles/cmTC_13157.dir/CheckFunctionExists.c.obj
-        C:\\mingw64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_13157.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_13157.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_13157.dir\\CheckFunctionExists.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ibfmp4\\CheckFunctionExists.c
-        Linking C executable cmTC_13157.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_13157.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_13157.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_13157.dir/objects.a @CMakeFiles\\cmTC_13157.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_13157.dir/objects.a -Wl,--no-whole-archive -o cmTC_13157.exe -Wl,--out-implib,libcmTC_13157.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_13157.dir\\linkLibs.rsp
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_8a23e/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8a23e.dir\\build.make CMakeFiles/cmTC_8a23e.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-6qggrc'
+        Building C object CMakeFiles/cmTC_8a23e.dir/CheckFunctionExists.c.obj
+        C:\\mingw64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_8a23e.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_8a23e.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_8a23e.dir\\CheckFunctionExists.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6qggrc\\CheckFunctionExists.c
+        Linking C executable cmTC_8a23e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8a23e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_8a23e.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_8a23e.dir/objects.a @CMakeFiles\\cmTC_8a23e.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_8a23e.dir/objects.a -Wl,--no-whole-archive -o cmTC_8a23e.exe -Wl,--out-implib,libcmTC_8a23e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_8a23e.dir\\linkLibs.rsp
         lld: error: unable to find library -lpthreads
         clang-17: error: linker command failed with exit code 1 (use -v to see invocation)
-        mingw32-make[1]: *** [CMakeFiles\\cmTC_13157.dir\\build.make:101: cmTC_13157.exe] Error 1
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ibfmp4'
-        mingw32-make: *** [Makefile:126: cmTC_13157/fast] Error 2
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_8a23e.dir\\build.make:101: cmTC_8a23e.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-6qggrc'
+        mingw32-make: *** [Makefile:126: cmTC_8a23e/fast] Error 2
         
       exitCode: 2
   -
@@ -495,8 +495,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ath7rz"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ath7rz"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-doihoe"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-doihoe"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -507,19 +507,19 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ath7rz'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-doihoe'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_f672b/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f672b.dir\\build.make CMakeFiles/cmTC_f672b.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ath7rz'
-        Building C object CMakeFiles/cmTC_f672b.dir/CheckFunctionExists.c.obj
-        C:\\mingw64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_f672b.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_f672b.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_f672b.dir\\CheckFunctionExists.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ath7rz\\CheckFunctionExists.c
-        Linking C executable cmTC_f672b.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f672b.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f672b.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_f672b.dir/objects.a @CMakeFiles\\cmTC_f672b.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_f672b.dir/objects.a -Wl,--no-whole-archive -o cmTC_f672b.exe -Wl,--out-implib,libcmTC_f672b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f672b.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ath7rz'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_11264/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_11264.dir\\build.make CMakeFiles/cmTC_11264.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-doihoe'
+        Building C object CMakeFiles/cmTC_11264.dir/CheckFunctionExists.c.obj
+        C:\\mingw64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_11264.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_11264.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_11264.dir\\CheckFunctionExists.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-doihoe\\CheckFunctionExists.c
+        Linking C executable cmTC_11264.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_11264.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_11264.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_11264.dir/objects.a @CMakeFiles\\cmTC_11264.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_11264.dir/objects.a -Wl,--no-whole-archive -o cmTC_11264.exe -Wl,--out-implib,libcmTC_11264.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_11264.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-doihoe'
         
       exitCode: 0
   -
@@ -530,8 +530,8 @@ events:
     checks:
       - "Looking for dinput.h"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2c8rwq"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2c8rwq"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2ignp2"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2ignp2"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -542,19 +542,19 @@ events:
       variable: "DINPUT_H_FOUND"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2c8rwq'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2ignp2'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_f6f50/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f6f50.dir\\build.make CMakeFiles/cmTC_f6f50.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2c8rwq'
-        Building C object CMakeFiles/cmTC_f6f50.dir/CheckIncludeFile.c.obj
-        C:\\mingw64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_f6f50.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_f6f50.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_f6f50.dir\\CheckIncludeFile.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2c8rwq\\CheckIncludeFile.c
-        Linking C executable cmTC_f6f50.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f6f50.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f6f50.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_f6f50.dir/objects.a @CMakeFiles\\cmTC_f6f50.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_f6f50.dir/objects.a -Wl,--no-whole-archive -o cmTC_f6f50.exe -Wl,--out-implib,libcmTC_f6f50.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f6f50.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2c8rwq'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_834c5/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_834c5.dir\\build.make CMakeFiles/cmTC_834c5.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2ignp2'
+        Building C object CMakeFiles/cmTC_834c5.dir/CheckIncludeFile.c.obj
+        C:\\mingw64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_834c5.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_834c5.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_834c5.dir\\CheckIncludeFile.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ignp2\\CheckIncludeFile.c
+        Linking C executable cmTC_834c5.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_834c5.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_834c5.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_834c5.dir/objects.a @CMakeFiles\\cmTC_834c5.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_834c5.dir/objects.a -Wl,--no-whole-archive -o cmTC_834c5.exe -Wl,--out-implib,libcmTC_834c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_834c5.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-2ignp2'
         
       exitCode: 0
   -
@@ -565,8 +565,8 @@ events:
     checks:
       - "Looking for xinput.h"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-c6wx48"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-c6wx48"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ys9hi0"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ys9hi0"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -577,19 +577,19 @@ events:
       variable: "XINPUT_H_FOUND"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-c6wx48'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ys9hi0'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_04c33/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_04c33.dir\\build.make CMakeFiles/cmTC_04c33.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-c6wx48'
-        Building C object CMakeFiles/cmTC_04c33.dir/CheckIncludeFile.c.obj
-        C:\\mingw64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_04c33.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_04c33.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_04c33.dir\\CheckIncludeFile.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c6wx48\\CheckIncludeFile.c
-        Linking C executable cmTC_04c33.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_04c33.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_04c33.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_04c33.dir/objects.a @CMakeFiles\\cmTC_04c33.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_04c33.dir/objects.a -Wl,--no-whole-archive -o cmTC_04c33.exe -Wl,--out-implib,libcmTC_04c33.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_04c33.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-c6wx48'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_178b6/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_178b6.dir\\build.make CMakeFiles/cmTC_178b6.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ys9hi0'
+        Building C object CMakeFiles/cmTC_178b6.dir/CheckIncludeFile.c.obj
+        C:\\mingw64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_178b6.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_178b6.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_178b6.dir\\CheckIncludeFile.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ys9hi0\\CheckIncludeFile.c
+        Linking C executable cmTC_178b6.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_178b6.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_178b6.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_178b6.dir/objects.a @CMakeFiles\\cmTC_178b6.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_178b6.dir/objects.a -Wl,--no-whole-archive -o cmTC_178b6.exe -Wl,--out-implib,libcmTC_178b6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_178b6.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ys9hi0'
         
       exitCode: 0
   -
@@ -602,8 +602,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_DEP"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xeshdd"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xeshdd"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-0vju2p"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-0vju2p"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -614,20 +614,20 @@ events:
       variable: "_GLFW_HAS_DEP"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xeshdd'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-0vju2p'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_970ac/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_970ac.dir\\build.make CMakeFiles/cmTC_970ac.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xeshdd'
-        Building C object CMakeFiles/cmTC_970ac.dir/src.c.obj
-        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -MD -MT CMakeFiles/cmTC_970ac.dir/src.c.obj -MF CMakeFiles\\cmTC_970ac.dir\\src.c.obj.d -o CMakeFiles\\cmTC_970ac.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xeshdd\\src.c
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_d59b3/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d59b3.dir\\build.make CMakeFiles/cmTC_d59b3.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-0vju2p'
+        Building C object CMakeFiles/cmTC_d59b3.dir/src.c.obj
+        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -MD -MT CMakeFiles/cmTC_d59b3.dir/src.c.obj -MF CMakeFiles\\cmTC_d59b3.dir\\src.c.obj.d -o CMakeFiles\\cmTC_d59b3.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0vju2p\\src.c
         clang-17: warning: -Wl,--nxcompat: 'linker' input unused [-Wunused-command-line-argument]
-        Linking C executable cmTC_970ac.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_970ac.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_970ac.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_970ac.dir/objects.a @CMakeFiles\\cmTC_970ac.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -Wl,--nxcompat -Wl,--whole-archive CMakeFiles\\cmTC_970ac.dir/objects.a -Wl,--no-whole-archive -o cmTC_970ac.exe -Wl,--out-implib,libcmTC_970ac.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_970ac.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-xeshdd'
+        Linking C executable cmTC_d59b3.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_d59b3.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_d59b3.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_d59b3.dir/objects.a @CMakeFiles\\cmTC_d59b3.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -Wl,--nxcompat -Wl,--whole-archive CMakeFiles\\cmTC_d59b3.dir/objects.a -Wl,--no-whole-archive -o cmTC_d59b3.exe -Wl,--out-implib,libcmTC_d59b3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_d59b3.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-0vju2p'
         
       exitCode: 0
   -
@@ -640,8 +640,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_ASLR"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fdfoc4"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fdfoc4"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-gm5ap1"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-gm5ap1"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -652,20 +652,20 @@ events:
       variable: "_GLFW_HAS_ASLR"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fdfoc4'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-gm5ap1'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e55c9/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e55c9.dir\\build.make CMakeFiles/cmTC_e55c9.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fdfoc4'
-        Building C object CMakeFiles/cmTC_e55c9.dir/src.c.obj
-        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -MD -MT CMakeFiles/cmTC_e55c9.dir/src.c.obj -MF CMakeFiles\\cmTC_e55c9.dir\\src.c.obj.d -o CMakeFiles\\cmTC_e55c9.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdfoc4\\src.c
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_cebdc/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_cebdc.dir\\build.make CMakeFiles/cmTC_cebdc.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-gm5ap1'
+        Building C object CMakeFiles/cmTC_cebdc.dir/src.c.obj
+        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -MD -MT CMakeFiles/cmTC_cebdc.dir/src.c.obj -MF CMakeFiles\\cmTC_cebdc.dir\\src.c.obj.d -o CMakeFiles\\cmTC_cebdc.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gm5ap1\\src.c
         clang-17: warning: -Wl,--dynamicbase: 'linker' input unused [-Wunused-command-line-argument]
-        Linking C executable cmTC_e55c9.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e55c9.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e55c9.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_e55c9.dir/objects.a @CMakeFiles\\cmTC_e55c9.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -Wl,--dynamicbase -Wl,--whole-archive CMakeFiles\\cmTC_e55c9.dir/objects.a -Wl,--no-whole-archive -o cmTC_e55c9.exe -Wl,--out-implib,libcmTC_e55c9.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_e55c9.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-fdfoc4'
+        Linking C executable cmTC_cebdc.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_cebdc.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_cebdc.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_cebdc.dir/objects.a @CMakeFiles\\cmTC_cebdc.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -Wl,--dynamicbase -Wl,--whole-archive CMakeFiles\\cmTC_cebdc.dir/objects.a -Wl,--no-whole-archive -o cmTC_cebdc.exe -Wl,--out-implib,libcmTC_cebdc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_cebdc.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-gm5ap1'
         
       exitCode: 0
   -
@@ -678,8 +678,8 @@ events:
     checks:
       - "Performing Test _GLFW_HAS_64ASLR"
     directories:
-      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-oqk6ce"
-      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-oqk6ce"
+      source: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ynd28j"
+      binary: "C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ynd28j"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Program Files/LLVM/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -690,20 +690,20 @@ events:
       variable: "_GLFW_HAS_64ASLR"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-oqk6ce'
+        Change Dir: 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ynd28j'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_effca/fast
-        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_effca.dir\\build.make CMakeFiles/cmTC_effca.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-oqk6ce'
-        Building C object CMakeFiles/cmTC_effca.dir/src.c.obj
-        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -MD -MT CMakeFiles/cmTC_effca.dir/src.c.obj -MF CMakeFiles\\cmTC_effca.dir\\src.c.obj.d -o CMakeFiles\\cmTC_effca.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oqk6ce\\src.c
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_8f2e5/fast
+        C:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8f2e5.dir\\build.make CMakeFiles/cmTC_8f2e5.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ynd28j'
+        Building C object CMakeFiles/cmTC_8f2e5.dir/src.c.obj
+        C:\\mingw64\\bin\\cc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -MD -MT CMakeFiles/cmTC_8f2e5.dir/src.c.obj -MF CMakeFiles\\cmTC_8f2e5.dir\\src.c.obj.d -o CMakeFiles\\cmTC_8f2e5.dir\\src.c.obj -c C:\\Users\\fg614\\Documents\\Dev\\ST3D_project\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ynd28j\\src.c
         clang-17: warning: -Wl,--high-entropy-va: 'linker' input unused [-Wunused-command-line-argument]
-        Linking C executable cmTC_effca.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_effca.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_effca.dir/objects.a
-        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_effca.dir/objects.a @CMakeFiles\\cmTC_effca.dir\\objects1.rsp
-        C:\\mingw64\\bin\\cc.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles\\cmTC_effca.dir/objects.a -Wl,--no-whole-archive -o cmTC_effca.exe -Wl,--out-implib,libcmTC_effca.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_effca.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-oqk6ce'
+        Linking C executable cmTC_8f2e5.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8f2e5.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_8f2e5.dir/objects.a
+        C:\\mingw64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_8f2e5.dir/objects.a @CMakeFiles\\cmTC_8f2e5.dir\\objects1.rsp
+        C:\\mingw64\\bin\\cc.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles\\cmTC_8f2e5.dir/objects.a -Wl,--no-whole-archive -o cmTC_8f2e5.exe -Wl,--out-implib,libcmTC_8f2e5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_8f2e5.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/fg614/Documents/Dev/ST3D_project/build/CMakeFiles/CMakeScratch/TryCompile-ynd28j'
         
       exitCode: 0
 ...

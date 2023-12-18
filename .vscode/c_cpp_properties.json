@@ -7,7 +7,12 @@
                 "${VULKAN_SDK}/include",
                 "${workspaceFolder}/dependencies/GLFW/include",
                 "${workspaceFolder}/src/test",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/inc",
+                "${workspaceFolder}/inc/render",
+                "${workspaceFolder}/inc/render",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/inc"
             ],
             "defines": [
                 "_DEBUG",
