@@ -1,4 +1,5 @@
 #include "defines.h"
+#include "logger/logger.h"
 
 void createInstance(App *app)
 {
@@ -27,17 +28,76 @@ void createInstance(App *app)
   if (vkCreateInstance(&createInfo, NULL, &app->instance) != VK_SUCCESS)
   {
     printf("Failed to create instance!\n");
+    exit(EXIT_FAILURE);
   }
+}
+
+int isDeviceSuitable(VkPhysicalDevice device)
+{
+  VkPhysicalDeviceProperties deviceProperties;
+  vkGetPhysicalDeviceProperties(device, &deviceProperties);
+  VkPhysicalDeviceFeatures deviceFeatures;
+  vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
+  
+  return deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && deviceFeatures.geometryShader;
+}
+
+void pickPhysicalDevice(App *app)
+{
+  VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+  uint32_t deviceCount = 0;
+
+  vkEnumeratePhysicalDevices(app->instance, &deviceCount, NULL);
+  if (!deviceCount)
+  {
+    puts("failed to find GPUs with Vulkan support!\n");
+    exit(EXIT_FAILURE);
+  }
+
+  //----------change for struct later----------//
+  VkPhysicalDevice *devices = malloc(sizeof(VkPhysicalDevice) * deviceCount);
+  vkEnumeratePhysicalDevices(app->instance, &deviceCount, devices);
+
+  for (uint32_t i = 0; i < deviceCount; i++)
+  {
+    if (isDeviceSuitable(devices[i]))
+    {
+      physicalDevice = devices[i];
+      break;
+    }
+  }
+
+  if (physicalDevice == VK_NULL_HANDLE)
+  {
+    puts("failed to find a suitable GPU!\n");
+    exit(EXIT_FAILURE);
+  }
+}
+
+void createLogicalDevice()
+{
+  // todo
 }
 
 void initVulkan(App *app)
 {
   createInstance(app);
+  // todo
+  setupDebugMessenger();
+  pickPhysicalDevice(app);
+  createLogicalDevice();
 }
+
+void mainLoop(App *app)
+{
+  while (!glfwWindowShouldClose(app->window))
+  {
+    glfwPollEvents();
+  }
+}
+
 void cleanup(App *app)
 {
   vkDestroyInstance(app->instance, NULL);
-
-  glfwDestroyWindow(app->window);
-  glfwTerminate();
+  destroyWindow(app);
 }

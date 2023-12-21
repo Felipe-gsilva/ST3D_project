@@ -30,4 +30,5 @@ CMakeFiles/ST3D_project.dir/src/main.c.obj: \
   C:/mingw64/include/sec_api/sys/timeb_s.h C:/mingw64/include/_timeval.h \
   C:/mingw64/include/pthread_time.h \
   C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/window.h \
-  C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/renderer.h
+  C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/renderer.h \
+  C:/Users/fg614/Documents/Dev/ST3D_project/inc/logger/logger.h

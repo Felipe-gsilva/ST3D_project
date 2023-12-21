@@ -4,6 +4,7 @@
 CMakeFiles/ST3D_project.dir/src/main.c.obj: C:/Users/fg614/Documents/Dev/ST3D_project/src/main.c \
   C:/Users/fg614/Documents/Dev/ST3D_project/dependencies/GLFW/include/GLFW/glfw3.h \
   C:/Users/fg614/Documents/Dev/ST3D_project/inc/defines.h \
+  C:/Users/fg614/Documents/Dev/ST3D_project/inc/logger/logger.h \
   C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/renderer.h \
   C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/window.h \
   C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h264std.h \
@@ -56,19 +57,21 @@ C:/Users/fg614/Documents/Dev/ST3D_project/dependencies/GLFW/include/GLFW/glfw3.h
 
 C:/Users/fg614/Documents/Dev/ST3D_project/inc/defines.h:
 
-C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h265std.h:
+C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/window.h:
+
+C:/mingw64/include/stdint.h:
+
+C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h265std_decode.h:
+
+C:/Users/fg614/Documents/Dev/ST3D_project/inc/logger/logger.h:
 
 C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/renderer.h:
-
-C:/Users/fg614/Documents/Dev/ST3D_project/inc/render/window.h:
 
 C:/mingw64/lib/clang/17/include/mm_malloc.h:
 
 C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h264std.h:
 
-C:/mingw64/include/stdint.h:
-
-C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h265std_decode.h:
+C:/VulkanSDK/1.3.268.0/Include/vk_video/vulkan_video_codec_h265std.h:
 
 C:/VulkanSDK/1.3.268.0/Include/vulkan/vulkan_core.h:
 

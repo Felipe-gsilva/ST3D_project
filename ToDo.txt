@@ -1,0 +1,6 @@
+Logical devices and queues <--
+
+Extension support
+Validation Layers (to decide)
+Physical device and queue family 
+Change Physical Device Priority by giving it a score - later on

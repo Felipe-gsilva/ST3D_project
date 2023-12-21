@@ -1,7 +1,8 @@
-#ifndef DEFINES_H
-#define DEFINES_H
+#pragma once
 
 #define GLFW_INCLUDE_VULKAN
+#define REALEASE 0
+
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan_core.h>
 #include <vulkan/vulkan.h>
@@ -17,4 +18,8 @@ typedef struct App
   VkInstance instance;
 } App;
 
-#endif // DEFINES_H
+typedef struct Device
+{
+  VkPhysicalDevice physicalDevice;
+  VkDevice logicalDevice;
+} Device;
