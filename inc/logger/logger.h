@@ -22,8 +22,6 @@ typedef enum log_level
   LOG_LEVEL_TRACE = 5,
 } log_level;
 
-
-    
 void initLogging();
 void shutdownLogging();
 

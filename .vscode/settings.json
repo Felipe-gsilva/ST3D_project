@@ -75,6 +75,12 @@
     "window.h": "c",
     "stdlib.h": "c",
     "st3d.h": "c",
-    "ios": "c"
+    "ios": "c",
+    "*.vert": "c",
+    "vector_float2.hpp": "c",
+    "time.h": "c",
+    "glfw3native.h": "c",
+    "optional": "c",
+    "stdint.h": "c"
   }
 }

@@ -28,7 +28,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/engine/src/**",
+                "${workspaceFolder}/inc",
                 "${VULKAN_SDK}/include"
             ],
             "defines": [
@@ -38,7 +38,7 @@
                 "KEXPORT"
             ],
             "windowsSdkVersion": "10.0.18362.0",
-            "compilerPath": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+            "compilerPath": "C:/mingw64/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
