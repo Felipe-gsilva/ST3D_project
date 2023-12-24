@@ -13,7 +13,7 @@ else()
     glfw
     GIT_REPOSITORY https://github.com/glfw/glfw.git
     GIT_TAG        3.3.4
-    SOURCE_DIR     ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw
+    SOURCE_DIR     ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLFW
   )
   FetchContent_MakeAvailable(glfw)
   include_directories(${glfw_SOURCE_DIR}/include)
