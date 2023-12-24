@@ -1,6 +1,6 @@
 #include "defines.h"
-#include "render/geometry/window.h"
-#include "render/geometry/renderer.h"
+#include "headers/render/geometry/window.h"
+#include "headers/render/geometry/renderer.h"
 
 int main()
 {

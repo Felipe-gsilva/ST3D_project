@@ -1,7 +1,0 @@
-[submodule "Vulkan-Headers"]
-	path = dependencies/vulkan
-	url = https://github.com/KhronosGroup/Vulkan-Headers.git
-
-[submodule "GLFW"]
-  path = dependencies/GLFW
-  url = https://github.com/glfw/glfw.git

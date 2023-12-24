@@ -82,9 +82,13 @@
     "glfw3native.h": "c",
     "optional": "c",
     "stdint.h": "c",
-    "queues.h": "c"
+    "queues.h": "c",
+    "vulkan_win32.h": "c",
+    "xcb.h": "c",
+    "vulkan_xcb.h": "c"
   },
   "workbench.activityBar.iconClickBehavior": "toggle",
   "workbench.editor.openSideBySideDirection": "right",
-  "explorer.sortOrder": "default"
+  "explorer.sortOrder": "default",
+  "C_Cpp.errorSquiggles": "disabled"
 }
