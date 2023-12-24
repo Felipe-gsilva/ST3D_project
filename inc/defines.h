@@ -29,3 +29,14 @@ typedef struct App
   VkSurfaceKHR surface;
   Device device;
 } App;
+
+typedef struct QueueFamilyIndices
+{
+  uint32_t graphicsFamily;
+} QueueFamilyIndices;
+
+typedef struct queueCreateInfo
+{
+  VkDeviceQueueCreateInfo queueCreateInfo;
+  float *pQueuePriorities;
+} queueCreateInfo;

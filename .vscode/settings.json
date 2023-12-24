@@ -81,6 +81,10 @@
     "time.h": "c",
     "glfw3native.h": "c",
     "optional": "c",
-    "stdint.h": "c"
-  }
+    "stdint.h": "c",
+    "queues.h": "c"
+  },
+  "workbench.activityBar.iconClickBehavior": "toggle",
+  "workbench.editor.openSideBySideDirection": "right",
+  "explorer.sortOrder": "default"
 }

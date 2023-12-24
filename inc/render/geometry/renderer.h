@@ -2,6 +2,7 @@
 #include "render/geometry/queues.h"
 #include "logger/logger.h"
 
+
 void createInstance(App *app)
 {
   const char **glfwExtensions;
@@ -33,6 +34,8 @@ void createInstance(App *app)
   }
 }
 
+//----------------create surface----------------//
+/*
 void createSurface(App *app)
 {
   if (glfwCreateWindowSurface(app->instance, app->window, NULL, &app->surface) != VK_SUCCESS)
@@ -43,21 +46,18 @@ void createSurface(App *app)
 
   VkBool32 presentSupport = false;
   vkGetPhysicalDeviceSurfaceSupportKHR(app->device.physicalDevice, i, app->surface, &presentSupport);
-  if (!presentSupport)
+  if (presentSuport)
   {
-    printf("Physical device does not support presentation!\n");
-    exit(EXIT_FAILURE);
+    // indices.presentFamily = i;
   }
 }
+*/
 
-int isDeviceSuitable(VkPhysicalDevice device)
+bool isDeviceSuitable(App *app)
 {
-  VkPhysicalDeviceProperties deviceProperties;
-  vkGetPhysicalDeviceProperties(device, &deviceProperties);
-  VkPhysicalDeviceFeatures deviceFeatures;
-  vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
+  QueueFamilyIndices indices = findQueueFamilies(app);
 
-  return deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU && deviceFeatures.geometryShader;
+  return indices.graphicsFamily >= 0 && indices.presentFamily >= 0;
 }
 
 void pickPhysicalDevice(App *app)
@@ -72,15 +72,15 @@ void pickPhysicalDevice(App *app)
     exit(EXIT_FAILURE);
   }
 
-  // save on instance//
+  // FIX THIS FUNCTION
   VkPhysicalDevice *devices = malloc(sizeof(VkPhysicalDevice) * deviceCount);
-  vkEnumeratePhysicalDevices(app->instance, &deviceCount, devices);
+  vkEnumeratePhysicalDevices(app->instance, &deviceCount, &app->device.physicalDevice);
 
   for (uint32_t i = 0; i < deviceCount; i++)
   {
-    if (isDeviceSuitable(devices[i]))
+    if (isDeviceSuitable(app))
     {
-      physicalDevice = devices[i];
+      physicalDevice = app->device.physicalDevice;
       break;
     }
   }
@@ -91,11 +91,26 @@ void pickPhysicalDevice(App *app)
     exit(EXIT_FAILURE);
   }
   app->device.physicalDevice = physicalDevice;
+  free(devices);
 }
 
-void createLogicalDevice()
+void createLogicalDevice(App *app)
 {
-  // todo
+  float queuePriority = 1.0f;
+  
+  queueCreateInfo.pQueuePriorities = &queuePriority;
+  VkPhysicalDeviceFeatures deviceFeatures = {0};
+  VkDeviceCreateInfo createInfo = {
+      .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
+      .pQueueCreateInfos = &queueCreateInfo,
+      .queueCreateInfoCount = 1,
+      .pEnabledFeatures = &deviceFeatures};
+
+  if (vkCreateDevice(app->device.physicalDevice, &createInfo, NULL, &app->device.physicalDevice) != VK_SUCCESS)
+  {
+    puts("failed to create logical device!\n");
+    exit(EXIT_FAILURE);
+  }
 }
 
 void initVulkan(App *app)
@@ -103,9 +118,9 @@ void initVulkan(App *app)
   createInstance(app);
   // todo
   setupDebugMessenger();
-  createSurface(app);
+  //createSurface(app);
   pickPhysicalDevice(app);
-  createLogicalDevice();
+  createLogicalDevice(app);
 }
 
 void mainLoop(App *app)

@@ -1,0 +1,9 @@
+[submodule "Vulkan-Headers"]
+	path = dependencies/vulkan
+	url = https://github.com/KhronosGroup/Vulkan-Headers.git
+  tag = 1.3.182
+
+[submodule "GLFW"]
+  path = dependencies/GLFW
+  url = https://github.com/glfw/glfw.git
+  tag = 3.3.2

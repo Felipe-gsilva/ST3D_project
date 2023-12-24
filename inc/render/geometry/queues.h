@@ -1,10 +1,5 @@
 #include "defines.h"
 
-typedef struct QueueFamilyIndices
-{
-  uint32_t graphicsFamily;
-} QueueFamilyIndices;
-
 QueueFamilyIndices findQueueFamilies(App *app)
 {
   QueueFamilyIndices indices;
@@ -15,5 +10,17 @@ QueueFamilyIndices findQueueFamilies(App *app)
   VkQueueFamilyProperties *queueFamilies = (VkQueueFamilyProperties *)malloc(queueFamilyCount * sizeof(VkQueueFamilyProperties));
   vkGetPhysicalDeviceQueueFamilyProperties(app->device.physicalDevice, &queueFamilyCount, queueFamilies);
 
+  for (uint32_t i = 0; i < queueFamilyCount; i++)
+  {
+    if (queueFamilies[i].queueFlags & VK_QUEUE_GRAPHICS_BIT)
+    {
+      indices.graphicsFamily = i;
+    }
+
+    if (indices.graphicsFamily >= 0)
+    {
+      break;
+    }
+  }
   return indices;
 }
