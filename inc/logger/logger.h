@@ -22,17 +22,43 @@ typedef enum log_level
   LOG_LEVEL_TRACE = 5,
 } log_level;
 
-void initLogging();
+bool initLogging();
 void shutdownLogging();
 
-void logMessage(log_level level, const char *message);
+void logMessage(log_level level, const char *message, ...);
 
-// gonna be removed
-void setupDebugMessenger()
-{
-  if (!glfwVulkanSupported())
-  {
-    printf("Vulkan is not supported!\n");
-    exit(EXIT_FAILURE);
-  }
-}
+// log a fatal message
+#define LOG_FATAL(message, ...) logMessage(LOG_LEVEL_FATAL, message, ##__VA_ARGS__); 
+
+// log an error message
+#ifndef LOG_ERROR
+#define LOG_ERROR(message, ...) logMessage(LOG_LEVEL_ERROR, message, ##__VA_ARGS__);
+#endif
+
+// log a warning message
+#if LOG_WARN_ENABLED == 1
+#define LOG_WARN(message, ...) logMessage(LOG_LEVEL_WARN, message, ##__VA_ARGS__);
+#else 
+#define LOG_WARN(message, ...)
+#endif
+
+// log an info message
+#if LOG_INFO_ENABLED == 1
+#define LOG_INFO(message, ...) logMessage(LOG_LEVEL_INFO, message, ##__VA_ARGS__);
+#else
+#define LOG_INFO(message, ...)
+#endif
+
+// log a debug message
+#if LOG_DEBUG_ENABLED == 1
+#define LOG_DEBUG(message, ...) logMessage(LOG_LEVEL_DEBUG, message, ##__VA_ARGS__);
+#else
+#define LOG_DEBUG(message, ...)
+#endif
+
+// log a trace message
+#if LOG_TRACE_ENABLED == 1
+#define LOG_TRACE(message, ...) logMessage(LOG_LEVEL_TRACE, message, ##__VA_ARGS__);
+#else
+#define LOG_TRACE(message, ...)
+#endif

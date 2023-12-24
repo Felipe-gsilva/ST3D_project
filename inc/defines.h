@@ -5,6 +5,11 @@
 #define VK_USE_PLATFORM_WIN32_KHR
 #define GLFW_EXPOSE_NATIVE_WIN32
 
+#define u32 uint32_t
+#define u64 uint64_t
+#define i32 int32_t
+#define i64 int64_t
+
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan_core.h>
 #include <vulkan/vulkan.h>
@@ -32,7 +37,8 @@ typedef struct App
 
 typedef struct QueueFamilyIndices
 {
-  uint32_t graphicsFamily;
+  u32 graphicsFamily;
+  u32 presentFamily;
 } QueueFamilyIndices;
 
 typedef struct queueCreateInfo
