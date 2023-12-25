@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-set(NAME ST3D_project)
+set(PROJECT_NAME ST3D_project)
  
 message(STATUS "using ${CMAKE_GENERATOR}")
 if (CMAKE_GENERATOR STREQUAL "MinGW Makefiles")
@@ -12,7 +12,7 @@ if (CMAKE_GENERATOR STREQUAL "MinGW Makefiles")
     set(CMAKE_CXX_COMPILER  ${MINGW_PATH}/bin/g++.exe)
 endif()
  
-project(${NAME} VERSION 0.1)
+project(${PROJECT_NAME} C CXX)
 
 if(UNIX)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Werror -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor")
@@ -61,10 +61,10 @@ else()
     message(STATUS "Using vulkan lib at: ${Vulkan_LIBRARIES}")
 endif()
 
-#include directories
-include_directories(inc)
+# get source files
+file(GLOB_RECURSE SOURCE_FILES "${PROJECT_SOURCE_DIR}/src/*.c")
 
-add_executable(${PROJECT_NAME} src/main.c)
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
@@ -81,13 +81,15 @@ if (WIN32)
       ${MINGW_PATH}/lib
     )
   endif()
- 
+
   target_include_directories(${PROJECT_NAME} PUBLIC
     ${PROJECT_SOURCE_DIR}/src
-    ${PROJECT_SOURCE_DIR}/src/headers
+    ${PROJECT_SOURCE_DIR}/src/core
+    ${PROJECT_SOURCE_DIR}/src/core/render
+    ${PROJECT_SOURCE_DIR}/src/core/logger
+    ${CGLM_PATH}
     ${Vulkan_INCLUDE_DIRS}
     ${GLFW_INCLUDE_DIRS}
-    ${GLM_PATH}
     )
  
   target_link_directories(${PROJECT_NAME} PUBLIC
@@ -100,36 +102,34 @@ elseif (UNIX)
     message(STATUS "CREATING BUILD FOR UNIX")
     target_include_directories(${PROJECT_NAME} PUBLIC
       ${PROJECT_SOURCE_DIR}/src
+      ${PROJECT_SOURCE_DIR}/src/core
+      ${PROJECT_SOURCE_DIR}/src/core/render
+      ${PROJECT_SOURCE_DIR}/src/core/logger
+      ${CGLM_PATH}
+      ${Vulkan_INCLUDE_DIRS}
+      ${GLFW_INCLUDE_DIRS}
     )
     target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES})
 endif()
 
 
-if (${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "AMD64")
-  set(GLSL_VALIDATOR "${Vulkan_LIBRARIES}/Bin/glslangValidator.exe")
-else()
-  set(GLSL_VALIDATOR "${Vulkan_LIBRARIES}/Bin32/glslangValidator.exe")
-endif()
+set(SHADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/shaders)
 
-file(GLOB_RECURSE GLSL_SOURCE_FILES
-    "src/shaders/*.frag"
-    "src/shaders/*.vert"
-    )
+file(GLOB SHADERS
+  ${SHADER_DIR}/*.vert ${SHADER_DIR}/*.frag ${SHADER_DIR}/*.comp ${SHADER_DIR}/*.geom ${SHADER_DIR}/*.tesc ${SHADER_DIR}/*.tese ${SHADER_DIR}/*.mesh ${SHADER_DIR}/*.task ${SHADER_DIR}/*.rgen ${SHADER_DIR}/*.rchit ${SHADER_DIR}/*.rmiss
+)
 
-foreach(GLSL ${GLSL_SOURCE_FILES})
-  get_filename_component(FILE_NAME ${GLSL} NAME)
-  set(SPIRV "${PROJECT_BINARY_DIR}/shaders/${FILE_NAME}.spv")
+foreach(SHADER IN LISTS SHADERS)
+  get_filename_component(FILENAME ${SHADER} NAME)
   add_custom_command(
-    OUTPUT ${SPIRV}
-    COMMAND ${CMAKE_COMMAND} -E make_directory "${PROJECT_BINARY_DIR}/src/shaders/"
-    COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}
-    DEPENDS ${GLSL})
-  list(APPEND SPIRV_BINARY_FILES ${SPIRV})
-endforeach(GLSL)
+    OUTPUT ${SHADER_DIR}/${FILENAME}.spv
+    COMMAND ${Vulkan_GLSLC_EXECUTABLE} ${SHADER} -o ${SHADER_DIR}/${FILENAME}.spv
+    DEPENDS ${SHADER}
+    COMMENT "Compiling ${FILENAME}"
+  )
+  list(APPEND SPV_SHADERS ${SHADER_DIR}/${FILENAME}.spv)
+endforeach()
 
-add_custom_target(
-    Shaders 
-    DEPENDS ${SPIRV_BINARY_FILES}
-    )
+add_custom_target(shaders ALL DEPENDS ${SPV_SHADERS})
 
-add_dependencies(${PROJECT_NAME} Shaders)
+add_dependencies(${PROJECT_NAME} shaders)

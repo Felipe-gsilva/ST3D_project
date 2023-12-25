@@ -5,3 +5,8 @@ Validation Layers (to decide)
 Change Physical Device Priority by giving it a score
 Fix builder for glfw and cglm
 Cmake for linux later on
+
+
+
+possible stdlog being added
+https://github.com/gabime/spdlog

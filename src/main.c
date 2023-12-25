@@ -1,6 +1,16 @@
-#include "defines.h"
-#include "headers/render/geometry/window.h"
-#include "headers/render/geometry/renderer.h"
+#include "main.h"
+
+void initVulkan(App *app)
+{
+  {
+  createInstance(app);
+  // todo
+  setupDebugMessenger();
+  // createSurface(app);
+  pickPhysicalDevice(app);
+  createLogicalDevice(app);
+}
+}
 
 int main()
 {

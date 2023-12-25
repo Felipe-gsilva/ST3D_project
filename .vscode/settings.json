@@ -85,7 +85,10 @@
     "queues.h": "c",
     "vulkan_win32.h": "c",
     "xcb.h": "c",
-    "vulkan_xcb.h": "c"
+    "vulkan_xcb.h": "c",
+    "logger.h": "c",
+    "pipeline.h": "c",
+    "validation.h": "c"
   },
   "workbench.activityBar.iconClickBehavior": "toggle",
   "workbench.editor.openSideBySideDirection": "right",
