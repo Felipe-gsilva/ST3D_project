@@ -75,16 +75,55 @@ void createInstance(App *pApp)
   }
 }
 
+void drawFrame(App *pApp)
+{
+  vkAcquireNextImageKHR(pApp->device->logicalDevice, pApp->swapChain, UINT64_MAX, pApp->imageAvailableSemaphore, VK_NULL_HANDLE, &pApp->imageIndex);
+  vkWaitForFences(pApp->device->logicalDevice, 1, &pApp->inFlightFence, VK_TRUE, UINT64_MAX);
+  vkResetFences(pApp->device->logicalDevice, 1, &pApp->inFlightFence);
+
+  vkResetCommandBuffer(pApp->commandBuffer, 0);
+  recordCommandBuffer(pApp);
+
+  VkSubmitInfo submitInfo = {
+      .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO};
+
+  VkSemaphore waitSemaphores[] = {pApp->imageAvailableSemaphore};
+  VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+  submitInfo.waitSemaphoreCount = 1;
+  submitInfo.pWaitSemaphores = waitSemaphores;
+  submitInfo.pWaitDstStageMask = waitStages;
+  submitInfo.commandBufferCount = 1;
+  submitInfo.pCommandBuffers = &pApp->commandBuffer;
+
+  VkSemaphore signalSemaphores[] = {pApp->renderFinishedSemaphore};
+  submitInfo.signalSemaphoreCount = 1;
+  submitInfo.pSignalSemaphores = signalSemaphores;
+
+  if (vkQueueSubmit(pApp->device->graphicsQueue, 1, &submitInfo, pApp->inFlightFence) != VK_SUCCESS)
+  {
+    puts("failed to submit draw command buffer!");
+    exit(EXIT_FAILURE);
+  }
+}
+
 void mainLoop(App *pApp)
 {
   while (!glfwWindowShouldClose(pApp->window))
   {
     glfwPollEvents();
+    drawFrame(pApp);
   }
 }
 
 void cleanup(App *pApp)
 {
+  cleanupSyncObjects(pApp);
+  cleanupCommandbuffer(pApp);
+  vkDestroyCommandPool(pApp->device->logicalDevice, pApp->commandPool, NULL);
+  cleanupFramebuffers(pApp);
+  vkDestroyPipeline(pApp->device->logicalDevice, pApp->graphicsPipeline, NULL);
+  vkDestroyPipelineLayout(pApp->device->logicalDevice, pApp->pipelineLayout, NULL);
+  vkDestroyRenderPass(pApp->device->logicalDevice, pApp->renderPass, NULL);
   if (enableValidationLayers)
   {
     DestroyDebugUtilsMessengerEXT(pApp->instance, pApp->debugMessenger, NULL);

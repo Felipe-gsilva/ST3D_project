@@ -11,6 +11,10 @@ void initVulkan(App *pApp)
     createSwapChain(pApp);
     createImageViews(pApp);
     createGraphicsPipeline(pApp);
+    createFramebuffers(pApp);
+    createCommandPool(pApp);
+    createCommandBuffer(pApp);
+    createSyncObjects(pApp);
   }
 }
 

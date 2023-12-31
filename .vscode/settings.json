@@ -153,7 +153,10 @@
     "typeinfo": "c",
     "variant": "c",
     "swap_chain.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "framebuffers.h": "c",
+    "commandpool.h": "c",
+    "sync.h": "c"
   },
   "workbench.activityBar.iconClickBehavior": "toggle",
   "workbench.editor.openSideBySideDirection": "right",

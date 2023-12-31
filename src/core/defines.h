@@ -102,7 +102,16 @@ typedef struct App
   VkImageView *swapChainImageViews;
   VkFormat swapChainImageFormat;
   VkExtent2D swapChainExtent;
-  VkShaderModule *shaderModules;
   u32 shaderCount;
   VkPipelineShaderStageCreateInfo *shaderStages;
+  VkRenderPass renderPass;
+  VkPipelineLayout pipelineLayout;
+  VkPipeline graphicsPipeline;
+  VkFramebuffer *swapChainFramebuffers;
+  VkCommandPool commandPool;
+  VkCommandBuffer commandBuffer;
+  u32 imageIndex;
+  VkSemaphore imageAvailableSemaphore;
+  VkSemaphore renderFinishedSemaphore;
+  VkFence inFlightFence;
 } App;

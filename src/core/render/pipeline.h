@@ -9,6 +9,6 @@ void ReadFile(const char *filename, ShaderFile *shader);
 
 void createGraphicsPipeline(App *pApp);
 
-void createGraphicsQueue();
+void createRenderPass(App *pApp);
 
 void cleanupImageViews(App *pApp);
