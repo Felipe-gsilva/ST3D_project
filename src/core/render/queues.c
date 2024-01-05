@@ -1,5 +1,8 @@
 #include "queues.h"
 
+// ------------------------------------------------- //
+// -------------  Swap Chain Suport ---------------- //
+
 SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VkSurfaceKHR surface)
 {
   SwapChainSupportDetails details;
@@ -29,6 +32,9 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VkSurface
 
   return details;
 }
+
+// ------------------------------------------------- //
+// -------------  Find Queue Families -------------- //
 
 QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device, VkSurfaceKHR surface)
 {

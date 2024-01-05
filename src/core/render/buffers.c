@@ -59,7 +59,7 @@ void cleanupFramebuffers(App *pApp)
 
 void cleanupCommandbuffer(App *pApp)
 {
-  vkFreeCommandBuffers(pApp->logicalDevice, pApp->commandPool, MAX_FRAMES_IN_FLIGHT, pApp->commandBuffer);
+  vkFreeCommandBuffers(pApp->logicalDevice, pApp->commandPool, (u32)MAX_FRAMES_IN_FLIGHT, pApp->commandBuffer);
 }
 
 void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageIndex)

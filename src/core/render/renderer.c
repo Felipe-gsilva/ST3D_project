@@ -125,6 +125,10 @@ void drawFrame(App *pApp)
   currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 }
 
+// ------------------------------------------------- //
+// ------------------ Main Loop -------------------- //
+// ------------------------------------------------- //
+
 void mainLoop(App *pApp)
 {
   while (!glfwWindowShouldClose(pApp->window))

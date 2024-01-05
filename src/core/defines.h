@@ -33,7 +33,6 @@ extern const bool enableValidationLayers;
 extern const char *validationLayers[];
 extern const u32 validationLayerCount;
 extern const int MAX_FRAMES_IN_FLIGHT;
-extern const u32 imageIndex;
 extern u32 currentFrame;
 
 VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(

@@ -1,5 +1,8 @@
 #include "main.h"
 
+// ------------------------------------------------- //
+// ------------------Init Vulkan ------------------- //
+
 void initVulkan(App *pApp)
 {
   {
@@ -17,6 +20,9 @@ void initVulkan(App *pApp)
     createSyncObjects(pApp);
   }
 }
+
+// ------------------------------------------------- //
+// ------------------  Clean Up  ------------------- //
 
 void cleanup(App *pApp)
 {

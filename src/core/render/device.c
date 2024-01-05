@@ -27,6 +27,9 @@ bool checkDeviceExtensionSupport(VkPhysicalDevice device)
   return (requiredExtensionsCount == 0);
 }
 
+// ------------------------------------------------- //
+// --------------  Device Suitability -------------- //
+
 bool isDeviceSuitable(App *pApp, VkPhysicalDevice device)
 {
   QueueFamilyIndices indices = findQueueFamilies(device, pApp->surface);
@@ -86,6 +89,9 @@ void pickPhysicalDevice(App *pApp)
 
   pApp->queueFamilyIndices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
 }
+
+// ------------------------------------------------- //
+// ---------------  Create Device  ----------------- //
 
 void createLogicalDevice(App *pApp)
 {

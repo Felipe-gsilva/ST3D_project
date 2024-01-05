@@ -1,5 +1,8 @@
 #include "pipeline.h"
 
+// ------------------------------------------------- //
+// ------------------  Pipeline  ------------------- //
+
 void createImageViews(App *pApp)
 {
   pApp->swapChainImageViews = malloc(sizeof(VkImageView) * pApp->swapChainImageCount);
@@ -29,6 +32,9 @@ void createImageViews(App *pApp)
   }
 }
 
+// ------------------------------------------------- //
+// ---------------  Get shader file  --------------- //
+
 void readFile(const char *filename, ShaderFile *shader)
 {
   FILE *pFile;
@@ -51,6 +57,9 @@ void readFile(const char *filename, ShaderFile *shader)
 
   fclose(pFile);
 }
+
+// ------------------------------------------------- //
+// ---------------  Create Pipeline  --------------- //
 
 VkShaderModule createShaderModule(App *pApp, ShaderFile *shaderFile)
 {
@@ -239,6 +248,9 @@ void createGraphicsPipeline(App *pApp)
   vkDestroyShaderModule(pApp->logicalDevice, fragShaderModule, NULL);
   vkDestroyShaderModule(pApp->logicalDevice, vertShaderModule, NULL);
 }
+
+// ------------------------------------------------- //
+// ------------------  Clean Up  ------------------- //
 
 void cleanupImageViews(App *pApp)
 {
