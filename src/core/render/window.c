@@ -1,5 +1,16 @@
 #include "window.h"
 
+void createSurface(App *pApp)
+{
+  puts("Creating Surface");
+  if (glfwCreateWindowSurface(pApp->instance, pApp->window, NULL, &pApp->surface) != VK_SUCCESS)
+  {
+    printf("Failed to create window surface!\n");
+    exit(EXIT_FAILURE);
+  }
+  puts("Surface created!");
+}
+
 void initWindow(App *pApp)
 {
   const u32 WIDTH = 800;

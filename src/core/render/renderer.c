@@ -1,16 +1,21 @@
 #include "renderer.h"
 
+const int MAX_FRAMES_IN_FLIGHT = 2;
 const char *validationLayers[] = {
     "VK_LAYER_KHRONOS_validation"};
 const u32 validationLayerCount = 1;
-
-char *ProjectName = "ST3D_project";
+u32 currentFrame = 0;
+const char ProjectName[] = "ST3D_project";
 
 #ifdef NDEBUG
 const bool enableValidationLayers = false;
 #else
 const bool enableValidationLayers = true;
 #endif
+
+// ------------------------------------------------- //
+// ------------------  Instance  ------------------- //
+// ------------------------------------------------- //
 
 void createInstance(App *pApp)
 {
@@ -75,35 +80,49 @@ void createInstance(App *pApp)
   }
 }
 
+// ------------------------------------------------- //
+// ------------------ Draw Frames ------------------ //
+// ------------------------------------------------- //
+
 void drawFrame(App *pApp)
 {
-  vkAcquireNextImageKHR(pApp->device->logicalDevice, pApp->swapChain, UINT64_MAX, pApp->imageAvailableSemaphore, VK_NULL_HANDLE, &pApp->imageIndex);
-  vkWaitForFences(pApp->device->logicalDevice, 1, &pApp->inFlightFence, VK_TRUE, UINT64_MAX);
-  vkResetFences(pApp->device->logicalDevice, 1, &pApp->inFlightFence);
+  puts("Drawing Frame");
+  vkWaitForFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame], VK_TRUE, UINT64_MAX);
 
-  vkResetCommandBuffer(pApp->commandBuffer, 0);
-  recordCommandBuffer(pApp);
+  vkResetFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame]);
+
+  u32 imageIndex;
+  vkAcquireNextImageKHR(pApp->logicalDevice, pApp->swapChain, UINT64_MAX, pApp->imageAvailableSemaphore[currentFrame], VK_NULL_HANDLE, &imageIndex);
+
+  vkResetFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame]);
+
+  vkResetCommandBuffer(pApp->commandBuffer[currentFrame], 0);
+  recordCommandBuffer(pApp, pApp->commandBuffer[currentFrame], imageIndex);
 
   VkSubmitInfo submitInfo = {
       .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO};
 
-  VkSemaphore waitSemaphores[] = {pApp->imageAvailableSemaphore};
+  VkSemaphore waitSemaphores[] = {pApp->imageAvailableSemaphore[currentFrame]};
   VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
   submitInfo.waitSemaphoreCount = 1;
   submitInfo.pWaitSemaphores = waitSemaphores;
   submitInfo.pWaitDstStageMask = waitStages;
-  submitInfo.commandBufferCount = 1;
-  submitInfo.pCommandBuffers = &pApp->commandBuffer;
 
-  VkSemaphore signalSemaphores[] = {pApp->renderFinishedSemaphore};
+  submitInfo.commandBufferCount = 1;
+  submitInfo.pCommandBuffers = &pApp->commandBuffer[currentFrame];
+
+  VkSemaphore signalSemaphores[] = {pApp->renderFinishedSemaphore[currentFrame]};
   submitInfo.signalSemaphoreCount = 1;
   submitInfo.pSignalSemaphores = signalSemaphores;
-
-  if (vkQueueSubmit(pApp->device->graphicsQueue, 1, &submitInfo, pApp->inFlightFence) != VK_SUCCESS)
+  
+  if (vkQueueSubmit(pApp->graphicsQueue, 1, &submitInfo, pApp->inFlightFence[currentFrame]) != VK_SUCCESS)
   {
-    puts("failed to submit draw command buffer!");
+    printf("Failed to submit draw command buffer!\n");
     exit(EXIT_FAILURE);
   }
+  puts("Submitted Draw Command Buffer");
+
+  currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 }
 
 void mainLoop(App *pApp)
@@ -113,25 +132,4 @@ void mainLoop(App *pApp)
     glfwPollEvents();
     drawFrame(pApp);
   }
-}
-
-void cleanup(App *pApp)
-{
-  cleanupSyncObjects(pApp);
-  cleanupCommandbuffer(pApp);
-  vkDestroyCommandPool(pApp->device->logicalDevice, pApp->commandPool, NULL);
-  cleanupFramebuffers(pApp);
-  vkDestroyPipeline(pApp->device->logicalDevice, pApp->graphicsPipeline, NULL);
-  vkDestroyPipelineLayout(pApp->device->logicalDevice, pApp->pipelineLayout, NULL);
-  vkDestroyRenderPass(pApp->device->logicalDevice, pApp->renderPass, NULL);
-  if (enableValidationLayers)
-  {
-    DestroyDebugUtilsMessengerEXT(pApp->instance, pApp->debugMessenger, NULL);
-  }
-  cleanupImageViews(pApp);
-  cleanupSwapChain(pApp);
-  cleanupDevice(pApp);
-  vkDestroySurfaceKHR(pApp->instance, pApp->surface, NULL);
-  vkDestroyInstance(pApp->instance, NULL);
-  destroyWindow(pApp);
 }

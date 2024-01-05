@@ -156,7 +156,10 @@
     "string.h": "c",
     "framebuffers.h": "c",
     "commandpool.h": "c",
-    "sync.h": "c"
+    "sync.h": "c",
+    "buffers.h": "c",
+    "command_pool.h": "c",
+    "surface.h": "c"
   },
   "workbench.activityBar.iconClickBehavior": "toggle",
   "workbench.editor.openSideBySideDirection": "right",

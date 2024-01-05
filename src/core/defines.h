@@ -32,6 +32,9 @@
 extern const bool enableValidationLayers;
 extern const char *validationLayers[];
 extern const u32 validationLayerCount;
+extern const int MAX_FRAMES_IN_FLIGHT;
+extern const u32 imageIndex;
+extern u32 currentFrame;
 
 VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
@@ -44,17 +47,6 @@ typedef struct ShaderFile
   size_t size;
   char *code;
 } ShaderFile;
-
-typedef struct Device
-{
-  VkPhysicalDevice physicalDevice;
-  VkPhysicalDeviceProperties properties;
-  VkPhysicalDeviceFeatures features;
-  VkExtensionProperties *extensions;
-  VkDevice logicalDevice;
-  VkQueue graphicsQueue;
-  VkQueue presentQueue;
-} Device;
 
 typedef struct Logger
 {
@@ -91,9 +83,16 @@ typedef struct App
   GLFWwindow *window;
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
+  VkDevice logicalDevice;
   VkSurfaceKHR surface;
+  QueueFamilyIndices queueFamilyIndices;
   VkPhysicalDevice *deviceList;
-  Device *device;
+  VkPhysicalDevice physicalDevice;
+  VkPhysicalDeviceProperties properties;
+  VkPhysicalDeviceFeatures features;
+  VkExtensionProperties *extensions;
+  VkQueue graphicsQueue;
+  VkQueue presentQueue;
   Logger *logger;
   SwapChainSupportDetails details;
   VkSwapchainKHR swapChain;
@@ -109,9 +108,8 @@ typedef struct App
   VkPipeline graphicsPipeline;
   VkFramebuffer *swapChainFramebuffers;
   VkCommandPool commandPool;
-  VkCommandBuffer commandBuffer;
-  u32 imageIndex;
-  VkSemaphore imageAvailableSemaphore;
-  VkSemaphore renderFinishedSemaphore;
-  VkFence inFlightFence;
+  VkCommandBuffer *commandBuffer;
+  VkSemaphore *imageAvailableSemaphore;
+  VkSemaphore *renderFinishedSemaphore;
+  VkFence *inFlightFence;
 } App;

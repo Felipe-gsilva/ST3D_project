@@ -18,6 +18,27 @@ void initVulkan(App *pApp)
   }
 }
 
+void cleanup(App *pApp)
+{
+  cleanupSyncObjects(pApp);
+  cleanupCommandbuffer(pApp);
+  vkDestroyCommandPool(pApp->logicalDevice, pApp->commandPool, NULL);
+  cleanupFramebuffers(pApp);
+  vkDestroyPipeline(pApp->logicalDevice, pApp->graphicsPipeline, NULL);
+  vkDestroyPipelineLayout(pApp->logicalDevice, pApp->pipelineLayout, NULL);
+  vkDestroyRenderPass(pApp->logicalDevice, pApp->renderPass, NULL);
+  if (enableValidationLayers)
+  {
+    DestroyDebugUtilsMessengerEXT(pApp->instance, pApp->debugMessenger, NULL);
+  }
+  cleanupImageViews(pApp);
+  cleanupSwapChain(pApp);
+  cleanupDevice(pApp);
+  vkDestroySurfaceKHR(pApp->instance, pApp->surface, NULL);
+  vkDestroyInstance(pApp->instance, NULL);
+  destroyWindow(pApp);
+}
+
 int main()
 {
   App pApp = {0};

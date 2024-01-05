@@ -21,7 +21,7 @@ void createImageViews(App *pApp)
         .subresourceRange.baseArrayLayer = 0,
         .subresourceRange.layerCount = 1};
 
-    if (vkCreateImageView(pApp->device->logicalDevice, &createInfo, NULL, &pApp->swapChainImageViews[i]) != VK_SUCCESS)
+    if (vkCreateImageView(pApp->logicalDevice, &createInfo, NULL, &pApp->swapChainImageViews[i]) != VK_SUCCESS)
     {
       puts("failed to create image views!");
       exit(EXIT_FAILURE);
@@ -60,7 +60,7 @@ VkShaderModule createShaderModule(App *pApp, ShaderFile *shaderFile)
       .pCode = (u32 *)shaderFile->code};
 
   VkShaderModule shaderModule;
-  if (vkCreateShaderModule(pApp->device->logicalDevice, &createInfo, NULL, &shaderModule) != VK_SUCCESS)
+  if (vkCreateShaderModule(pApp->logicalDevice, &createInfo, NULL, &shaderModule) != VK_SUCCESS)
   {
     puts("failed to create shader module!");
     exit(EXIT_FAILURE);
@@ -173,7 +173,7 @@ void createGraphicsPipeline(App *pApp)
       .pushConstantRangeCount = 0,
       .pPushConstantRanges = NULL};
 
-  if (vkCreatePipelineLayout(pApp->device->logicalDevice, &pipelineLayoutInfo, NULL, &pApp->pipelineLayout) != VK_SUCCESS)
+  if (vkCreatePipelineLayout(pApp->logicalDevice, &pipelineLayoutInfo, NULL, &pApp->pipelineLayout) != VK_SUCCESS)
   {
     puts("failed to create pipeline layout!");
     exit(EXIT_FAILURE);
@@ -204,7 +204,7 @@ void createGraphicsPipeline(App *pApp)
       .subpassCount = 1,
       renderPassInfo.pSubpasses = &subpass};
 
-  if (vkCreateRenderPass(pApp->device->logicalDevice, &renderPassInfo, NULL, &pApp->renderPass) != VK_SUCCESS)
+  if (vkCreateRenderPass(pApp->logicalDevice, &renderPassInfo, NULL, &pApp->renderPass) != VK_SUCCESS)
   {
     puts("failed to create render pass!");
     exit(EXIT_FAILURE);
@@ -228,18 +228,23 @@ void createGraphicsPipeline(App *pApp)
       .basePipelineHandle = VK_NULL_HANDLE,
       .basePipelineIndex = -1};
 
-  if (vkCreateGraphicsPipelines(pApp->device->logicalDevice, VK_NULL_HANDLE, 1, &pipelineInfo, NULL, &pApp->graphicsPipeline) != VK_SUCCESS)
+  if (vkCreateGraphicsPipelines(pApp->logicalDevice, VK_NULL_HANDLE, 1, &pipelineInfo, NULL, &pApp->graphicsPipeline) != VK_SUCCESS)
   {
     puts("failed to create graphics pipeline!");
     exit(EXIT_FAILURE);
   }
+
+  free(vertShader.code);
+  free(fragShader.code);
+  vkDestroyShaderModule(pApp->logicalDevice, fragShaderModule, NULL);
+  vkDestroyShaderModule(pApp->logicalDevice, vertShaderModule, NULL);
 }
 
 void cleanupImageViews(App *pApp)
 {
   for (size_t i = 0; i < pApp->swapChainImageCount; i++)
   {
-    vkDestroyImageView(pApp->device->logicalDevice, pApp->swapChainImageViews[i], NULL);
+    vkDestroyImageView(pApp->logicalDevice, pApp->swapChainImageViews[i], NULL);
   }
 }
 
@@ -247,7 +252,7 @@ void cleanupShaders(App *pApp)
 {
   for (size_t i = 0; i < pApp->shaderCount; i++)
   {
-    vkDestroyShaderModule(pApp->device->logicalDevice, pApp->shaderStages[i].module, NULL);
+    vkDestroyShaderModule(pApp->logicalDevice, pApp->shaderStages[i].module, NULL);
   }
   free(pApp->shaderStages);
 }

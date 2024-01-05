@@ -4,15 +4,11 @@
 #include "queues.h"
 #include "window.h"
 #include "device.h"
-#include "surface.h"
 #include "swap_chain.h"
 #include "pipeline.h"
 #include "validation/validation.h"
 #include "logger.h"
-#include "framebuffers.h"
-#include "command_pool.h"
-#include "sync.h"
-
+#include "buffers.h"
 
 void createInstance(App *pApp);
 

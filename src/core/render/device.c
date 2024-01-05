@@ -31,9 +31,9 @@ bool isDeviceSuitable(App *pApp, VkPhysicalDevice device)
 {
   QueueFamilyIndices indices = findQueueFamilies(device, pApp->surface);
 
-  vkGetPhysicalDeviceProperties(device, &pApp->device->properties);
+  vkGetPhysicalDeviceProperties(device, &pApp->properties);
 
-  vkGetPhysicalDeviceFeatures(device, &pApp->device->features);
+  vkGetPhysicalDeviceFeatures(device, &pApp->features);
 
   bool extensionsSupported = checkDeviceExtensionSupport(device);
 
@@ -46,13 +46,12 @@ bool isDeviceSuitable(App *pApp, VkPhysicalDevice device)
     puts("Swap chain support checked!");
   }
 
-  return indices.isPresentFamilySet && extensionsSupported && swapChainAdequate;
+  return indices.isPresentFamilySet && extensionsSupported && swapChainAdequate && indices.isGraphicsFamilySet;
 }
 
 void pickPhysicalDevice(App *pApp)
 {
-  pApp->device = malloc(sizeof(Device));
-  pApp->device->physicalDevice = VK_NULL_HANDLE;
+  pApp->physicalDevice = VK_NULL_HANDLE;
   u32 deviceCount = 0;
 
   vkEnumeratePhysicalDevices(pApp->instance, &deviceCount, NULL);
@@ -71,12 +70,12 @@ void pickPhysicalDevice(App *pApp)
   {
     if (isDeviceSuitable(pApp, pApp->deviceList[i]))
     {
-      pApp->device->physicalDevice = pApp->deviceList[i];
+      pApp->physicalDevice = pApp->deviceList[i];
       break;
     }
   }
 
-  if (pApp->device->physicalDevice == VK_NULL_HANDLE)
+  if (pApp->physicalDevice == VK_NULL_HANDLE)
   {
     printf("Failed to find a suitable GPU!\n");
     exit(EXIT_FAILURE);
@@ -84,11 +83,13 @@ void pickPhysicalDevice(App *pApp)
 
   free(pApp->deviceList);
   printf("Physical device picked!\n");
+
+  pApp->queueFamilyIndices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
 }
 
 void createLogicalDevice(App *pApp)
 {
-  QueueFamilyIndices indices = findQueueFamilies(pApp->device->physicalDevice, pApp->surface);
+  QueueFamilyIndices indices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
   float queuePriority = 1.0f;
 
   VkDeviceQueueCreateInfo queueCreateInfos[2];
@@ -109,7 +110,7 @@ void createLogicalDevice(App *pApp)
   }
 
   VkPhysicalDeviceFeatures deviceFeatures;
-  vkGetPhysicalDeviceFeatures(pApp->device->physicalDevice, &deviceFeatures);
+  vkGetPhysicalDeviceFeatures(pApp->physicalDevice, &deviceFeatures);
 
   VkDeviceCreateInfo createInfo = {
       .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
@@ -129,19 +130,19 @@ void createLogicalDevice(App *pApp)
     createInfo.enabledLayerCount = 0;
   }
 
-  if (vkCreateDevice(pApp->device->physicalDevice, &createInfo, NULL, &pApp->device->logicalDevice) != VK_SUCCESS)
+  if (vkCreateDevice(pApp->physicalDevice, &createInfo, NULL, &pApp->logicalDevice) != VK_SUCCESS)
   {
     puts("failed to create logical device!");
     exit(EXIT_FAILURE);
   }
 
-  vkGetDeviceQueue(pApp->device->logicalDevice, indices.graphicsFamily, 0, &pApp->device->presentQueue);
+  vkGetDeviceQueue(pApp->logicalDevice, pApp->queueFamilyIndices.graphicsFamily, 0, &pApp->graphicsQueue);
+  vkGetDeviceQueue(pApp->logicalDevice, pApp->queueFamilyIndices.presentFamily, 0, &pApp->presentQueue);
   printf("Logical device created!\n");
 }
 
 void cleanupDevice(App *pApp)
 {
-  vkDestroyDevice(pApp->device->logicalDevice, NULL);
-  free(pApp->device);
+  vkDestroyDevice(pApp->logicalDevice, NULL);
   printf("Logical device destroyed!\n");
 }

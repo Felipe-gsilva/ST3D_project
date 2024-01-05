@@ -51,7 +51,7 @@ VkExtent2D chooseSwapExtent(GLFWwindow *window, VkSurfaceCapabilitiesKHR capabil
 
 void createSwapChain(App *pApp)
 {
-  SwapChainSupportDetails swapChainSupport = querySwapChainSupport(pApp->device->physicalDevice, pApp->surface);
+  SwapChainSupportDetails swapChainSupport = querySwapChainSupport(pApp->physicalDevice, pApp->surface);
 
   VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formatCount, swapChainSupport.formats);
   VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModeCount, swapChainSupport.presentModes);
@@ -73,7 +73,7 @@ void createSwapChain(App *pApp)
       .imageArrayLayers = 1,
       .imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT};
 
-  QueueFamilyIndices indices = findQueueFamilies(pApp->device->physicalDevice, pApp->surface);
+  QueueFamilyIndices indices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
   u32 queueFamilyIndices[] = {indices.graphicsFamily, indices.presentFamily};
 
   if (indices.graphicsFamily != indices.presentFamily)
@@ -85,8 +85,8 @@ void createSwapChain(App *pApp)
   else
   {
     createInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
-    createInfo.queueFamilyIndexCount = 0;  // Optional
-    createInfo.pQueueFamilyIndices = NULL; // Optional
+    createInfo.queueFamilyIndexCount = 0;
+    createInfo.pQueueFamilyIndices = NULL;
   }
 
   createInfo.preTransform = swapChainSupport.capabilities.currentTransform;
@@ -95,16 +95,16 @@ void createSwapChain(App *pApp)
   createInfo.clipped = VK_TRUE;
   createInfo.oldSwapchain = VK_NULL_HANDLE;
 
-  if (vkCreateSwapchainKHR(pApp->device->logicalDevice, &createInfo, NULL, &pApp->swapChain) != VK_SUCCESS)
+  if (vkCreateSwapchainKHR(pApp->logicalDevice, &createInfo, NULL, &pApp->swapChain) != VK_SUCCESS)
   {
     printf("Failed to create Swap Chain!\n");
     exit(5);
   }
 
-  vkGetSwapchainImagesKHR(pApp->device->logicalDevice, pApp->swapChain, &imageCount, NULL);
+  vkGetSwapchainImagesKHR(pApp->logicalDevice, pApp->swapChain, &imageCount, NULL);
   pApp->swapChainImages = (VkImage *)malloc(sizeof(VkImage) * imageCount);
 
-  vkGetSwapchainImagesKHR(pApp->device->logicalDevice, pApp->swapChain, &imageCount, pApp->swapChainImages);
+  vkGetSwapchainImagesKHR(pApp->logicalDevice, pApp->swapChain, &imageCount, pApp->swapChainImages);
   pApp->swapChainImageCount = imageCount;
 
   pApp->swapChainImageFormat = surfaceFormat.format;
@@ -113,7 +113,7 @@ void createSwapChain(App *pApp)
 
 void cleanupSwapChain(App *pApp)
 {
-  vkDestroySwapchainKHR(pApp->device->logicalDevice, pApp->swapChain, NULL);
+  vkDestroySwapchainKHR(pApp->logicalDevice, pApp->swapChain, NULL);
   free(pApp->details.formats);
   free(pApp->details.presentModes);
   free(pApp->details.extent);

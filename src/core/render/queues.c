@@ -21,6 +21,7 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VkSurface
   details.presentModeCount = presentCount;
   VkPresentModeKHR presentModes[presentCount];
   details.presentModes = presentModes;
+  printf("presentCount: %d\n", presentCount);
   if (presentCount != 0)
   {
     vkGetPhysicalDeviceSurfacePresentModesKHR(device, surface, &presentCount, details.presentModes);
@@ -31,29 +32,28 @@ SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, VkSurface
 
 QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device, VkSurfaceKHR surface)
 {
-  QueueFamilyIndices indices;
+  QueueFamilyIndices indices = {0};
+
   u32 queueFamilyCount = 0;
   vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, NULL);
 
-  VkQueueFamilyProperties *queueFamilies = malloc(queueFamilyCount * sizeof(VkQueueFamilyProperties));
-  vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, queueFamilies);
+  VkQueueFamilyProperties queueFamilyProperties[queueFamilyCount];
+  vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, queueFamilyProperties);
 
   for (u32 i = 0; i < queueFamilyCount; i++)
   {
-    if (queueFamilies[i].queueFlags & VK_QUEUE_GRAPHICS_BIT)
+    if (queueFamilyProperties[i].queueFlags & VK_QUEUE_GRAPHICS_BIT)
     {
       indices.graphicsFamily = i;
+      indices.isGraphicsFamilySet = true;
     }
-
     VkBool32 presentSupport = false;
     vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface, &presentSupport);
-
     if (presentSupport)
     {
       indices.presentFamily = i;
+      indices.isPresentFamilySet = true;
     }
   }
-
-  free(queueFamilies);
   return indices;
 }
