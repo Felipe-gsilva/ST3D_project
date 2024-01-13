@@ -1,6 +1,8 @@
 Roadmap.md
 ToDo.txt
 **/build/
+**/.cache/
 **/.vscode/
 **/shaders/*.spv
 **/.vscode/
+**/tree-sitter-c/

@@ -31,3 +31,4 @@ void destroyWindow(App *pApp)
   glfwTerminate();
   puts("Window destroyed!");
 }
+

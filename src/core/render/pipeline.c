@@ -120,7 +120,7 @@ void createGraphicsPipeline(App *pApp)
       VK_DYNAMIC_STATE_LINE_WIDTH,
       VK_DYNAMIC_STATE_SCISSOR};
 
-  size_t dynamicStateCount = sizeof(dynamicStates) / sizeof(dynamicStates[0]);
+  u32 dynamicStateCount = sizeof(dynamicStates) / sizeof(dynamicStates[0]);
 
   VkPipelineDynamicStateCreateInfo dynamicState = {
       .sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO,
@@ -206,12 +206,21 @@ void createGraphicsPipeline(App *pApp)
       .colorAttachmentCount = 1,
       .pColorAttachments = &colorAttachmentRef};
 
+  VkSubpassDependency dependency = {
+    .srcSubpass = VK_SUBPASS_EXTERNAL,
+    .dstSubpass = 0,
+    .dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,
+    .dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT
+  };
+
   VkRenderPassCreateInfo renderPassInfo = {
       .sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO,
       .attachmentCount = 1,
       .pAttachments = &colorAttachment,
       .subpassCount = 1,
-      renderPassInfo.pSubpasses = &subpass};
+      .dependencyCount = 1,
+      .pDependencies = &dependency,
+      .pSubpasses = &subpass};
 
   if (vkCreateRenderPass(pApp->logicalDevice, &renderPassInfo, NULL, &pApp->renderPass) != VK_SUCCESS)
   {

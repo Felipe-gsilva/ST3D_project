@@ -112,3 +112,4 @@ typedef struct App
   VkSemaphore *renderFinishedSemaphore;
   VkFence *inFlightFence;
 } App;
+

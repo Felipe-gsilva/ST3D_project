@@ -15,7 +15,6 @@ const bool enableValidationLayers = true;
 
 // ------------------------------------------------- //
 // ------------------  Instance  ------------------- //
-// ------------------------------------------------- //
 
 void createInstance(App *pApp)
 {
@@ -82,11 +81,9 @@ void createInstance(App *pApp)
 
 // ------------------------------------------------- //
 // ------------------ Draw Frames ------------------ //
-// ------------------------------------------------- //
 
 void drawFrame(App *pApp)
 {
-  puts("Drawing Frame");
   vkWaitForFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame], VK_TRUE, UINT64_MAX);
 
   vkResetFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame]);
@@ -120,14 +117,25 @@ void drawFrame(App *pApp)
     printf("Failed to submit draw command buffer!\n");
     exit(EXIT_FAILURE);
   }
-  puts("Submitted Draw Command Buffer");
 
   currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
+
+  VkPresentInfoKHR presentInfo = {
+    .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR, 		
+    .waitSemaphoreCount = 1, 		
+    .pWaitSemaphores = signalSemaphores	 	
+  };	
+  VkSwapchainKHR swapChains[] = {pApp->swapChain};
+  presentInfo.swapchainCount = 1;
+  presentInfo.pSwapchains = swapChains;
+  presentInfo.pImageIndices = &imageIndex;
+  presentInfo.pResults = NULL;
+
+  vkQueuePresentKHR(pApp->presentQueue, &presentInfo);	
 }
 
 // ------------------------------------------------- //
 // ------------------ Main Loop -------------------- //
-// ------------------------------------------------- //
 
 void mainLoop(App *pApp)
 {
@@ -136,4 +144,5 @@ void mainLoop(App *pApp)
     glfwPollEvents();
     drawFrame(pApp);
   }
+  vkDeviceWaitIdle(pApp->logicalDevice);
 }

@@ -6,9 +6,9 @@ void createCommandPool(App *pApp)
   QueueFamilyIndices queueFamilyIndices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
 
   VkCommandPoolCreateInfo poolInfo = {
-      .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
-      .flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT,
-      .queueFamilyIndex = queueFamilyIndices.graphicsFamily};
+	  .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
+	  .flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT,
+	  .queueFamilyIndex = queueFamilyIndices.graphicsFamily};
 
   if (vkCreateCommandPool(pApp->logicalDevice, &poolInfo, NULL, &pApp->commandPool) != VK_SUCCESS)
   {
@@ -115,32 +115,30 @@ void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageInde
     printf("failed to record command buffer!\n");
     exit(14);
   }
-  puts("Command Buffer Recorded");
 }
 
 void createCommandBuffer(App *pApp)
 {
   printf("Creating Command Buffer\n");
-  pApp->commandBuffer = (VkCommandBuffer *)malloc(sizeof(VkCommandBuffer) * MAX_FRAMES_IN_FLIGHT);
+  pApp->commandBuffer = (VkCommandBuffer *)malloc(sizeof(VkCommandBuffer) * (u32)MAX_FRAMES_IN_FLIGHT);
   VkCommandBufferAllocateInfo allocInfo = {
       .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
       .commandPool = pApp->commandPool,
       .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
-      .commandBufferCount = MAX_FRAMES_IN_FLIGHT};
+      .commandBufferCount = (u32)MAX_FRAMES_IN_FLIGHT};
 
   if (vkAllocateCommandBuffers(pApp->logicalDevice, &allocInfo, pApp->commandBuffer) != VK_SUCCESS)
   {
     puts("failed to allocate command buffers!");
     exit(EXIT_FAILURE);
   }
-  puts("Command Buffer Created");
 }
 
 void createSyncObjects(App *pApp)
 {
   pApp->imageAvailableSemaphore = (VkSemaphore *)calloc(sizeof(VkSemaphore), MAX_FRAMES_IN_FLIGHT);
   pApp->renderFinishedSemaphore = (VkSemaphore *)calloc(sizeof(VkSemaphore), MAX_FRAMES_IN_FLIGHT);
-  pApp->inFlightFence = (VkFence *)calloc(sizeof(VkFence), MAX_FRAMES_IN_FLIGHT);
+  pApp->inFlightFence = (VkFence *)calloc(sizeof(VkFence), (u32)MAX_FRAMES_IN_FLIGHT);
 
   VkSemaphoreCreateInfo semaphoreInfo = {
       .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
@@ -149,7 +147,7 @@ void createSyncObjects(App *pApp)
       .sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO,
       .flags = VK_FENCE_CREATE_SIGNALED_BIT};
 
-  for (int i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
+  for (int i = 0; i < (u32)MAX_FRAMES_IN_FLIGHT; i++)
   {
     if (vkCreateSemaphore(pApp->logicalDevice, &semaphoreInfo, NULL, &pApp->imageAvailableSemaphore[i]) != VK_SUCCESS)
     {
@@ -171,10 +169,11 @@ void createSyncObjects(App *pApp)
 
 void cleanupSyncObjects(App *pApp)
 {
-  for (int i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
+  for (int i = 0; i < (u32)MAX_FRAMES_IN_FLIGHT; i++)
   {
     vkDestroySemaphore(pApp->logicalDevice, pApp->renderFinishedSemaphore[i], NULL);
     vkDestroySemaphore(pApp->logicalDevice, pApp->imageAvailableSemaphore[i], NULL);
     vkDestroyFence(pApp->logicalDevice, pApp->inFlightFence[i], NULL);
   }
 }
+

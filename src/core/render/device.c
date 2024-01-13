@@ -152,3 +152,4 @@ void cleanupDevice(App *pApp)
   vkDestroyDevice(pApp->logicalDevice, NULL);
   printf("Logical device destroyed!\n");
 }
+

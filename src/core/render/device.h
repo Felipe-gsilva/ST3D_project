@@ -5,7 +5,6 @@
 #include "queues.h"
 
 
-
 bool checkDeviceExtensionSupport(VkPhysicalDevice device);
 
 bool isDeviceSuitable(App *pApp, VkPhysicalDevice device);
