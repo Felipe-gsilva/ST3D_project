@@ -6,6 +6,7 @@ const char *validationLayers[] = {
 const u32 validationLayerCount = 1;
 u32 currentFrame = 0;
 const char ProjectName[] = "ST3D_project";
+bool framebufferResized = false;
 
 #ifdef NDEBUG
 const bool enableValidationLayers = false;
@@ -86,10 +87,18 @@ void drawFrame(App *pApp)
 {
   vkWaitForFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame], VK_TRUE, UINT64_MAX);
 
-  vkResetFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame]);
-
   u32 imageIndex;
-  vkAcquireNextImageKHR(pApp->logicalDevice, pApp->swapChain, UINT64_MAX, pApp->imageAvailableSemaphore[currentFrame], VK_NULL_HANDLE, &imageIndex);
+  VkResult result = vkAcquireNextImageKHR(pApp->logicalDevice, pApp->swapChain, UINT64_MAX, pApp->imageAvailableSemaphore[currentFrame], VK_NULL_HANDLE, &imageIndex);
+
+  if(result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || framebufferResized)
+  {
+    framebufferResized = false;
+    recreateSwapChain(pApp);
+  }
+  else if(result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR)
+  {
+    printf("Failed to acquire swap chain image!\n");
+  }
 
   vkResetFences(pApp->logicalDevice, 1, &pApp->inFlightFence[currentFrame]);
 
@@ -97,7 +106,7 @@ void drawFrame(App *pApp)
   recordCommandBuffer(pApp, pApp->commandBuffer[currentFrame], imageIndex);
 
   VkSubmitInfo submitInfo = {
-      .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO};
+    .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO};
 
   VkSemaphore waitSemaphores[] = {pApp->imageAvailableSemaphore[currentFrame]};
   VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
@@ -111,7 +120,7 @@ void drawFrame(App *pApp)
   VkSemaphore signalSemaphores[] = {pApp->renderFinishedSemaphore[currentFrame]};
   submitInfo.signalSemaphoreCount = 1;
   submitInfo.pSignalSemaphores = signalSemaphores;
-  
+
   if (vkQueueSubmit(pApp->graphicsQueue, 1, &submitInfo, pApp->inFlightFence[currentFrame]) != VK_SUCCESS)
   {
     printf("Failed to submit draw command buffer!\n");

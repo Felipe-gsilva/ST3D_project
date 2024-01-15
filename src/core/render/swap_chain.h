@@ -5,7 +5,8 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
 #include "defines.h"
-#include "queues.h"
+#include "pipeline.h"
+#include "buffers.h"
 #include <stdlib.h>
 
 u32 clamp(u32 val, u32 min, u32 max);
@@ -19,3 +20,6 @@ VkExtent2D chooseSwapExtent(GLFWwindow *window, VkSurfaceCapabilitiesKHR capabil
 void createSwapChain(App *pApp);
 
 void cleanupSwapChain(App *pApp);
+
+void recreateSwapChain(App *pApp);
+

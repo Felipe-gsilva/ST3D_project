@@ -1,7 +1,9 @@
+tags
 Roadmap.md
 ToDo.txt
 **/build/
 **/.cache/
+**/src/tags
 **/.vscode/
 **/shaders/*.spv
 **/.vscode/

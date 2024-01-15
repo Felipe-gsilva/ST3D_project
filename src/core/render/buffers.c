@@ -2,50 +2,50 @@
 
 void createCommandPool(App *pApp)
 {
-  puts("Creating Command Pool");
-  QueueFamilyIndices queueFamilyIndices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
+	puts("Creating Command Pool");
+	QueueFamilyIndices queueFamilyIndices = findQueueFamilies(pApp->physicalDevice, pApp->surface);
 
-  VkCommandPoolCreateInfo poolInfo = {
-	  .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
-	  .flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT,
-	  .queueFamilyIndex = queueFamilyIndices.graphicsFamily};
+	VkCommandPoolCreateInfo poolInfo = {
+		.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
+		.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT,
+		.queueFamilyIndex = queueFamilyIndices.graphicsFamily};
 
-  if (vkCreateCommandPool(pApp->logicalDevice, &poolInfo, NULL, &pApp->commandPool) != VK_SUCCESS)
-  {
-    puts("failed to create command pool!");
-    exit(EXIT_FAILURE);
-  }
-  puts("Command Pool Created");
+	if (vkCreateCommandPool(pApp->logicalDevice, &poolInfo, NULL, &pApp->commandPool) != VK_SUCCESS)
+	{
+		puts("failed to create command pool!");
+		exit(EXIT_FAILURE);
+	}
+	puts("Command Pool Created");
 }
 
 void createFramebuffers(App *pApp)
 {
-  puts("Creating Framebuffers");
-  size_t swapChainImageCount = pApp->swapChainImageCount;
-  printf("swap chain image count: %ld\n", swapChainImageCount);
+	puts("Creating Framebuffers");
+	size_t swapChainImageCount = pApp->swapChainImageCount;
+	printf("swap chain image count: %ld\n", swapChainImageCount);
 
-  pApp->swapChainFramebuffers = (VkFramebuffer *)malloc(sizeof(VkFramebuffer) * swapChainImageCount);
+	pApp->swapChainFramebuffers = (VkFramebuffer *)malloc(sizeof(VkFramebuffer) * swapChainImageCount);
 
-  for (size_t i = 0; i < swapChainImageCount; i++)
-  {
-    VkImageView attachments[] = {pApp->swapChainImageViews[i]};
+	for (size_t i = 0; i < swapChainImageCount; i++)
+	{
+		VkImageView attachments[] = {pApp->swapChainImageViews[i]};
 
-    VkFramebufferCreateInfo framebufferInfo = {
-        .sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO,
-        .renderPass = pApp->renderPass,
-        .attachmentCount = 1,
-        .pAttachments = attachments,
-        .width = pApp->swapChainExtent.width,
-        .height = pApp->swapChainExtent.height,
-        .layers = 1};
+		VkFramebufferCreateInfo framebufferInfo = {
+			.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO,
+			.renderPass = pApp->renderPass,
+			.attachmentCount = 1,
+			.pAttachments = attachments,
+			.width = pApp->swapChainExtent.width,
+			.height = pApp->swapChainExtent.height,
+			.layers = 1};
 
-    if (vkCreateFramebuffer(pApp->logicalDevice, &framebufferInfo, NULL, &pApp->swapChainFramebuffers[i]) != VK_SUCCESS)
-    {
-      puts("failed to create framebuffer!");
-      exit(EXIT_FAILURE);
-    }
-  }
-  puts("Framebuffers Created");
+		if (vkCreateFramebuffer(pApp->logicalDevice, &framebufferInfo, NULL, &pApp->swapChainFramebuffers[i]) != VK_SUCCESS)
+		{
+			puts("failed to create framebuffer!");
+			exit(EXIT_FAILURE);
+		}
+	}
+	puts("Framebuffers Created");
 }
 
 void cleanupFramebuffers(App *pApp)
@@ -65,9 +65,9 @@ void cleanupCommandbuffer(App *pApp)
 void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageIndex)
 {
   VkCommandBufferBeginInfo beginInfo = {
-      .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
-      .flags = 0,
-      .pInheritanceInfo = NULL};
+    .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+    .flags = 0,
+    .pInheritanceInfo = NULL};
 
   if (vkBeginCommandBuffer(commandBuffer, &beginInfo) != VK_SUCCESS)
   {
@@ -76,12 +76,12 @@ void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageInde
   }
 
   VkRenderPassBeginInfo renderPassInfo = {
-      .sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO,
-      .renderPass = pApp->renderPass,
-      .framebuffer = pApp->swapChainFramebuffers[imageIndex],
-      .renderArea.offset.x = 0,
-      .renderArea.offset.y = 0,
-      .renderArea.extent = pApp->swapChainExtent};
+    .sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO,
+    .renderPass = pApp->renderPass,
+    .framebuffer = pApp->swapChainFramebuffers[imageIndex],
+    .renderArea.offset.x = 0,
+    .renderArea.offset.y = 0,
+    .renderArea.extent = pApp->swapChainExtent};
 
   VkClearValue clearColor = {{{0.0f, 0.0f, 0.0f, 1.0f}}};
   renderPassInfo.clearValueCount = 1;
@@ -92,18 +92,18 @@ void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageInde
   vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pApp->graphicsPipeline);
 
   VkViewport viewport = {
-      .x = 0.0f,
-      .y = 0.0f,
-      .width = (float)pApp->swapChainExtent.width,
-      .height = (float)pApp->swapChainExtent.height,
-      .minDepth = 0.0f,
-      .maxDepth = 1.0f};
+    .x = 0.0f,
+    .y = 0.0f,
+    .width = (float)pApp->swapChainExtent.width,
+    .height = (float)pApp->swapChainExtent.height,
+    .minDepth = 0.0f,
+    .maxDepth = 1.0f};
   vkCmdSetViewport(commandBuffer, 0, 1, &viewport);
 
   VkRect2D scissor = {
-      .offset.x = 0,
-      .offset.y = 0,
-      .extent = pApp->swapChainExtent};
+    .offset.x = 0,
+    .offset.y = 0,
+    .extent = pApp->swapChainExtent};
   vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
 
   vkCmdDraw(commandBuffer, 3, 1, 0, 0);
@@ -122,10 +122,10 @@ void createCommandBuffer(App *pApp)
   printf("Creating Command Buffer\n");
   pApp->commandBuffer = (VkCommandBuffer *)malloc(sizeof(VkCommandBuffer) * (u32)MAX_FRAMES_IN_FLIGHT);
   VkCommandBufferAllocateInfo allocInfo = {
-      .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
-      .commandPool = pApp->commandPool,
-      .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
-      .commandBufferCount = (u32)MAX_FRAMES_IN_FLIGHT};
+    .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
+    .commandPool = pApp->commandPool,
+    .level = VK_COMMAND_BUFFER_LEVEL_PRIMARY,
+    .commandBufferCount = (u32)MAX_FRAMES_IN_FLIGHT};
 
   if (vkAllocateCommandBuffers(pApp->logicalDevice, &allocInfo, pApp->commandBuffer) != VK_SUCCESS)
   {
@@ -141,11 +141,11 @@ void createSyncObjects(App *pApp)
   pApp->inFlightFence = (VkFence *)calloc(sizeof(VkFence), (u32)MAX_FRAMES_IN_FLIGHT);
 
   VkSemaphoreCreateInfo semaphoreInfo = {
-      .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
+    .sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
 
   VkFenceCreateInfo fenceInfo = {
-      .sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO,
-      .flags = VK_FENCE_CREATE_SIGNALED_BIT};
+    .sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO,
+    .flags = VK_FENCE_CREATE_SIGNALED_BIT};
 
   for (int i = 0; i < (u32)MAX_FRAMES_IN_FLIGHT; i++)
   {

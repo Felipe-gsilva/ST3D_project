@@ -34,7 +34,6 @@ extern const char *validationLayers[];
 extern const u32 validationLayerCount;
 extern const int MAX_FRAMES_IN_FLIGHT;
 extern u32 currentFrame;
-
 VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
@@ -111,5 +110,6 @@ typedef struct App
   VkSemaphore *imageAvailableSemaphore;
   VkSemaphore *renderFinishedSemaphore;
   VkFence *inFlightFence;
+  bool framebufferResized;
 } App;
 

@@ -1,5 +1,10 @@
 #include "window.h"
 
+static void framebufferResizeCallback(GLFWwindow* window, int width, int height) {
+  App* pApp = (App*)glfwGetWindowUserPointer(window);
+  pApp->framebufferResized = true;
+}
+
 void createSurface(App *pApp)
 {
   puts("Creating Surface");
@@ -20,9 +25,10 @@ void initWindow(App *pApp)
     exit(EXIT_FAILURE);
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
   pApp->window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", NULL, NULL);
+  glfwSetWindowUserPointer(pApp->window, pApp);
+  glfwSetFramebufferSizeCallback(pApp->window, framebufferResizeCallback);
 }
 
 void destroyWindow(App *pApp)
