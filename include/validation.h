@@ -16,3 +16,4 @@ const char **getRequiredExtensions();
 bool checkValidationLayerSupport();
 
 void validate();
+

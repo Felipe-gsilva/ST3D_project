@@ -5,10 +5,8 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
 #include "defines.h"
-#include "pipeline.h"
 #include "buffers.h"
-#include <stdlib.h>
-
+#include "pipeline.h"
 u32 clamp(u32 val, u32 min, u32 max);
 
 VkSurfaceFormatKHR chooseSwapSurfaceFormat(u32 formatCount, VkSurfaceFormatKHR *availableFormats);

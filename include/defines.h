@@ -23,6 +23,7 @@
 
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
+#include <cglm/call.h>
 #include <vulkan/vulkan_core.h>
 #include <vulkan/vulkan.h>
 #include <stdio.h>

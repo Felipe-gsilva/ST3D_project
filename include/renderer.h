@@ -6,7 +6,7 @@
 #include "device.h"
 #include "swap_chain.h"
 #include "pipeline.h"
-#include "validation/validation.h"
+#include "validation.h"
 #include "logger.h"
 #include "buffers.h"
 

@@ -30,23 +30,24 @@ if (DEFINED GLFW_PATH)
   message(STATUS "Using GLFW path specified in .env")
   set(GLFW_INCLUDE_DIRS "${GLFW_PATH}/include")
   if (MSVC)
-    set(GLFW_LIB "${GLFW_PATH}/lib-vc2019") # 2.1 Update lib-vc2019 to use same version as your visual studio
+    set(GLFW_LIB "${GLFW_PATH}/lib-vc2019")
   elseif (CMAKE_GENERATOR STREQUAL "MinGW Makefiles")
     message(STATUS "USING MINGW")
-    set(GLFW_LIB "${GLFW_PATH}/lib-mingw-w64") # 2.1 make sure matches glfw mingw subdirectory
+    set(GLFW_LIB "${GLFW_PATH}/lib-mingw-w64") # make sure matches glfw mingw subdirectory
   endif()
 else()
   find_package(glfw3 3.3 REQUIRED)
   set(GLFW_LIB glfw)
   message(STATUS "Found GLFW")
 endif()
+
 if (NOT GLFW_LIB)
     message(FATAL_ERROR "Could not find glfw library!")
 else()
     message(STATUS "Using glfw lib at: ${GLFW_LIB}")
 endif()
 
-
+# add vulkan library
 if (DEFINED VULKAN_SDK_PATH)
   set(Vulkan_INCLUDE_DIRS "${VULKAN_SDK_PATH}/Include") 
   set(Vulkan_LIBRARIES "${VULKAN_SDK_PATH}/Lib")
@@ -56,9 +57,37 @@ else()
   message(STATUS "Found Vulkan")
 endif()
 if (NOT Vulkan_FOUND)
-    message(FATAL_ERROR "Could not find Vulkan library!")
+  message(FATAL_ERROR "Could not find Vulkan library!")
 else()
-    message(STATUS "Using vulkan lib at: ${Vulkan_LIBRARIES}")
+  message(STATUS "Using vulkan lib at: ${Vulkan_LIBRARIES}")
+endif()
+
+# add cglm library
+if (DEFINED CGML_INSTALL_DIR)
+  set(CGLM_INCLUDE_DIRS "${CGML_INSTALL_DIR}/include")
+  set(CGLM_LIBRARIES "${CGML_INSTALL_DIR}/lib")
+  set(CGLM_FOUND "True")
+else()
+  if (UNIX)
+    find_library(CGLM_LIBRARY NAMES cglm PATHS "/usr/lib/x86_64-linux-gnu")
+  else()
+    find_package(cglm REQUIRED)
+  endif()
+  if (CGLM_LIBRARY)
+    set(CGLM_LIBRARIES ${CGLM_LIBRARY})
+    set(CGLM_FOUND True)
+  endif()
+endif()
+
+if (NOT CGLM_FOUND)
+  message("Could not find cglm library!")
+  if(UNIX)
+    message(FATAL_ERROR"Try installing cglm with: sudo apt-get install libglm-dev")
+  else()
+    message(FATAL_ERROR "Try installing cglm at https://cglm.readthedocs.io/en/latest/build.html")
+  endif()
+else()
+  message(STATUS "Using cglm lib at: ${CGLM_LIBRARIES}")
 endif()
 
 # get source files
@@ -84,9 +113,7 @@ if (WIN32)
 
   target_include_directories(${PROJECT_NAME} PUBLIC
     ${PROJECT_SOURCE_DIR}/src
-    ${PROJECT_SOURCE_DIR}/src/core
-    ${PROJECT_SOURCE_DIR}/src/core/render
-    ${PROJECT_SOURCE_DIR}/src/core/logger
+    ${PROJECT_SOURCE_DIR}/include
     ${CGLM_PATH}
     ${Vulkan_INCLUDE_DIRS}
     ${GLFW_INCLUDE_DIRS}
@@ -102,14 +129,12 @@ elseif (UNIX)
     message(STATUS "CREATING BUILD FOR UNIX")
     target_include_directories(${PROJECT_NAME} PUBLIC
       ${PROJECT_SOURCE_DIR}/src
-      ${PROJECT_SOURCE_DIR}/src/core
-      ${PROJECT_SOURCE_DIR}/src/core/render
-      ${PROJECT_SOURCE_DIR}/src/core/logger
-      ${CGLM_PATH}
+      ${PROJECT_SOURCE_DIR}/include
       ${Vulkan_INCLUDE_DIRS}
       ${GLFW_INCLUDE_DIRS}
+      ${cglm_INCLUDE_DIRS}
     )
-    target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES} ${cglm_LIBRARIES})
 endif()
 
 
