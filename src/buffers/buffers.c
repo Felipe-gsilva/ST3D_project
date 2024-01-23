@@ -106,7 +106,11 @@ void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageInde
     .extent = pApp->swapChainExtent};
   vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
 
-  vkCmdDraw(commandBuffer, 3, 1, 0, 0);
+  VkBuffer vertexBuffers[] = {pApp->vertexBuffer};
+  VkDeviceSize offsets[] = {0};
+  vkCmdBindVertexBuffers(commandBuffer, 0, 1, &pApp->vertexBuffer, offsets);
+
+  vkCmdDraw(commandBuffer, (sizeof(vertexBuffers)/sizeof(vertexBuffers[0])), 1, 0, 0);
 
   vkCmdEndRenderPass(commandBuffer);
 

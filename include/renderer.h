@@ -17,5 +17,3 @@ void initVulkan(App *pApp);
 void drawFrame(App *pApp);
 
 void mainLoop(App *pApp);
-
-void cleanup(App *pApp);

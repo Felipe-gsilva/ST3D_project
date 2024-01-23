@@ -15,7 +15,7 @@ endif()
 project(${PROJECT_NAME} C CXX)
 
 if(UNIX)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wnull-dereference -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -Wshadow -Wcast-align -Wnull-dereference -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor")
 endif()  
 
 if(WIN32)
@@ -62,34 +62,6 @@ else()
   message(STATUS "Using vulkan lib at: ${Vulkan_LIBRARIES}")
 endif()
 
-# add cglm library
-if (DEFINED CGML_INSTALL_DIR)
-  set(CGLM_INCLUDE_DIRS "${CGML_INSTALL_DIR}/include")
-  set(CGLM_LIBRARIES "${CGML_INSTALL_DIR}/lib")
-  set(CGLM_FOUND "True")
-else()
-  if (UNIX)
-    find_library(CGLM_LIBRARY NAMES cglm PATHS "/usr/lib/x86_64-linux-gnu")
-  else()
-    find_package(cglm REQUIRED)
-  endif()
-  if (CGLM_LIBRARY)
-    set(CGLM_LIBRARIES ${CGLM_LIBRARY})
-    set(CGLM_FOUND True)
-  endif()
-endif()
-
-if (NOT CGLM_FOUND)
-  message("Could not find cglm library!")
-  if(UNIX)
-    message(FATAL_ERROR"Try installing cglm with: sudo apt-get install libglm-dev")
-  else()
-    message(FATAL_ERROR "Try installing cglm at https://cglm.readthedocs.io/en/latest/build.html")
-  endif()
-else()
-  message(STATUS "Using cglm lib at: ${CGLM_LIBRARIES}")
-endif()
-
 # get source files
 file(GLOB_RECURSE SOURCE_FILES "${PROJECT_SOURCE_DIR}/src/*.c")
 
@@ -132,9 +104,8 @@ elseif (UNIX)
       ${PROJECT_SOURCE_DIR}/include
       ${Vulkan_INCLUDE_DIRS}
       ${GLFW_INCLUDE_DIRS}
-      ${cglm_INCLUDE_DIRS}
     )
-    target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES} ${cglm_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES})
 endif()
 
 

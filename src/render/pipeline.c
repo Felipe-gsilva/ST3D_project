@@ -103,12 +103,18 @@ void createGraphicsPipeline(App *pApp)
   pApp->shaderStages[0] = vertShaderStageInfo;
   pApp->shaderStages[1] = fragShaderStageInfo;
 
+  VkVertexInputBindingDescription *bindingDescription = malloc(sizeof(VkVertexInputBindingDescription));
+  getBindingDescription(bindingDescription);
+
+  VkVertexInputAttributeDescription *attributeDescriptions = malloc(sizeof(VkVertexInputAttributeDescription) * 2);
+  getAttributeDescriptions(attributeDescriptions);
+
   VkPipelineVertexInputStateCreateInfo vertexInputInfo = {
     .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
-    .vertexBindingDescriptionCount = 0,
-    .pVertexBindingDescriptions = NULL, // Optional
-    .vertexAttributeDescriptionCount = 0,
-    .pVertexAttributeDescriptions = NULL};
+    .vertexBindingDescriptionCount = 1,
+    .pVertexBindingDescriptions = bindingDescription,
+    .vertexAttributeDescriptionCount = 2, 
+    .pVertexAttributeDescriptions = attributeDescriptions};
 
   VkPipelineInputAssemblyStateCreateInfo inputAssembly = {
     .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,

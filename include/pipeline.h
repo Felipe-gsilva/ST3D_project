@@ -1,6 +1,8 @@
 #pragma once
 
 #include "defines.h"
+#include "math.h"
+#include "vertex.h"
 #include "string.h"
 
 void createImageViews(App *pApp);
