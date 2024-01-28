@@ -110,14 +110,13 @@ void createVertexBuffer(App *pApp)
   vkMapMemory(pApp->logicalDevice, pApp->vertexBufferMemory, 0, bufferInfo.size, 0, &data);
   memcpy(data, vertices, bufferInfo.size);
   vkUnmapMemory(pApp->logicalDevice, pApp->vertexBufferMemory);
+  free(vertices);
 }
-
 
 // ------------------------ //
 // ---- CLEANUP BUFFER ---- // 
 void cleanupVertexBuffer(App *pApp)
 {
-  free(pApp->vertices);
   vkDestroyBuffer(pApp->logicalDevice, pApp->vertexBuffer, NULL);
   vkFreeMemory(pApp->logicalDevice, pApp->vertexBufferMemory, NULL);
 }

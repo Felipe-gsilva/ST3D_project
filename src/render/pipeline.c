@@ -92,6 +92,7 @@ void createGraphicsPipeline(App *pApp)
     .stage = VK_SHADER_STAGE_VERTEX_BIT,
     .module = vertShaderModule,
     .pName = "main"};
+
   VkPipelineShaderStageCreateInfo fragShaderStageInfo = {
     .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
     .stage = VK_SHADER_STAGE_FRAGMENT_BIT,
@@ -214,6 +215,7 @@ void createGraphicsPipeline(App *pApp)
 
   VkSubpassDependency dependency = {
     .srcSubpass = VK_SUBPASS_EXTERNAL,
+    .srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,
     .dstSubpass = 0,
     .dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,
     .dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT

@@ -22,7 +22,7 @@ void createFramebuffers(App *pApp)
 {
 	puts("Creating Framebuffers");
 	size_t swapChainImageCount = pApp->swapChainImageCount;
-	printf("swap chain image count: %ld\n", swapChainImageCount);
+	printf("Swap Chain Image Count: %ld\n", swapChainImageCount);
 
 	pApp->swapChainFramebuffers = (VkFramebuffer *)malloc(sizeof(VkFramebuffer) * swapChainImageCount);
 
@@ -40,12 +40,12 @@ void createFramebuffers(App *pApp)
 			.layers = 1};
 
 		if (vkCreateFramebuffer(pApp->logicalDevice, &framebufferInfo, NULL, &pApp->swapChainFramebuffers[i]) != VK_SUCCESS)
-		{
-			puts("failed to create framebuffer!");
-			exit(EXIT_FAILURE);
-		}
-	}
-	puts("Framebuffers Created");
+    {
+      puts("failed to create framebuffer!");
+      exit(EXIT_FAILURE);
+    }
+  }
+  puts("Framebuffers Created");
 }
 
 void cleanupFramebuffers(App *pApp)
@@ -140,6 +140,7 @@ void createCommandBuffer(App *pApp)
 
 void createSyncObjects(App *pApp)
 {
+  puts("Creating Sync Objects");
   pApp->imageAvailableSemaphore = (VkSemaphore *)calloc(sizeof(VkSemaphore), MAX_FRAMES_IN_FLIGHT);
   pApp->renderFinishedSemaphore = (VkSemaphore *)calloc(sizeof(VkSemaphore), MAX_FRAMES_IN_FLIGHT);
   pApp->inFlightFence = (VkFence *)calloc(sizeof(VkFence), (u32)MAX_FRAMES_IN_FLIGHT);
@@ -151,7 +152,7 @@ void createSyncObjects(App *pApp)
     .sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO,
     .flags = VK_FENCE_CREATE_SIGNALED_BIT};
 
-  for (int i = 0; i < (u32)MAX_FRAMES_IN_FLIGHT; i++)
+  for (int i = 0; i < (int)MAX_FRAMES_IN_FLIGHT; i++)
   {
     if (vkCreateSemaphore(pApp->logicalDevice, &semaphoreInfo, NULL, &pApp->imageAvailableSemaphore[i]) != VK_SUCCESS)
     {
@@ -169,11 +170,12 @@ void createSyncObjects(App *pApp)
       exit(15);
     }
   }
+  puts("Sync Objects Created");
 }
 
 void cleanupSyncObjects(App *pApp)
 {
-  for (int i = 0; i < (u32)MAX_FRAMES_IN_FLIGHT; i++)
+  for (int i = 0; i < (int)MAX_FRAMES_IN_FLIGHT; i++)
   {
     vkDestroySemaphore(pApp->logicalDevice, pApp->renderFinishedSemaphore[i], NULL);
     vkDestroySemaphore(pApp->logicalDevice, pApp->imageAvailableSemaphore[i], NULL);
