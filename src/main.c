@@ -1,33 +1,30 @@
 #include "main.h"
 
-
 // ------------------------------------------------- //
 // ------------------Init Vulkan ------------------- //
 
-void initVulkan(App *pApp)
-{
-	{
-		createInstance(pApp);
-		setupDebugMessenger(pApp);
-		createSurface(pApp);
-		pickPhysicalDevice(pApp);
-		createLogicalDevice(pApp);
-		createSwapChain(pApp);
-		createImageViews(pApp);
-		createGraphicsPipeline(pApp);
-		createFramebuffers(pApp);
-		createCommandPool(pApp);
+void initVulkan(App *pApp) {
+  {
+    createInstance(pApp);
+    setupDebugMessenger(pApp);
+    createSurface(pApp);
+    pickPhysicalDevice(pApp);
+    createLogicalDevice(pApp);
+    createSwapChain(pApp);
+    createImageViews(pApp);
+    createGraphicsPipeline(pApp);
+    createFramebuffers(pApp);
+    createCommandPool(pApp);
     createVertexBuffer(pApp);
-		createCommandBuffer(pApp);
-		createSyncObjects(pApp);
-	}
+    createCommandBuffer(pApp);
+    createSyncObjects(pApp);
+  }
 }
 
 // ------------------------------------------------- //
 // ------------------  Clean Up  ------------------- //
 
-void cleanup(App *pApp)
-{
+void cleanup(App *pApp) {
   cleanupSwapChain(pApp);
   cleanupVertexBuffer(pApp);
   cleanupSyncObjects(pApp);
@@ -36,8 +33,7 @@ void cleanup(App *pApp)
   vkDestroyPipeline(pApp->logicalDevice, pApp->graphicsPipeline, NULL);
   vkDestroyPipelineLayout(pApp->logicalDevice, pApp->pipelineLayout, NULL);
   vkDestroyRenderPass(pApp->logicalDevice, pApp->renderPass, NULL);
-  if (enableValidationLayers)
-  {
+  if (enableValidationLayers) {
     DestroyDebugUtilsMessengerEXT(pApp->instance, pApp->debugMessenger, NULL);
   }
   cleanupDevice(pApp);
@@ -46,8 +42,7 @@ void cleanup(App *pApp)
   destroyWindow(pApp);
 }
 
-int main()
-{
+int main(void) {
   App pApp = {0};
   initWindow(&pApp);
   initVulkan(&pApp);

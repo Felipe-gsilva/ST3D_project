@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include "defines.h"
 #include "queues.h"
@@ -13,7 +13,8 @@ void createCommandBuffer(App *pApp);
 
 void cleanupCommandbuffer(App *pApp);
 
-void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer, u32 imageIndex);
+void recordCommandBuffer(App *pApp, VkCommandBuffer commandBuffer,
+                         u32 imageIndex);
 
 void createSyncObjects(App *pApp);
 

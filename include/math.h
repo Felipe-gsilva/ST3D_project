@@ -21,7 +21,7 @@ typedef struct vec4 {
 } vec4;
 
 typedef struct Vertex {
-  vec2 position; 
+  vec2 position;
   vec3 color;
   VkVertexInputBindingDescription bindingDescription;
   VkVertexInputAttributeDescription *attributeDescriptions;

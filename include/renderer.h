@@ -1,14 +1,14 @@
 #pragma once
 
-#include "defines.h"
-#include "queues.h"
-#include "window.h"
-#include "device.h"
-#include "swap_chain.h"
-#include "pipeline.h"
-#include "validation.h"
-#include "logger.h"
 #include "buffers.h"
+#include "defines.h"
+#include "device.h"
+#include "logger.h"
+#include "pipeline.h"
+#include "queues.h"
+#include "swap_chain.h"
+#include "validation.h"
+#include "window.h"
 
 void createInstance(App *pApp);
 

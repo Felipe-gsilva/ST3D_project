@@ -2,9 +2,11 @@ tags
 Roadmap.md
 ToDo.txt
 **/build/
+**/target/
 **/.cache/
 **/src/tags
 **/.vscode/
 **/shaders/*.spv
 **/.vscode/
 **/tree-sitter-c/
+compile_commands.json

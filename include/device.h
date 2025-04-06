@@ -1,9 +1,8 @@
 #pragma once
 
-#include <string.h>
 #include "defines.h"
 #include "queues.h"
-
+#include <string.h>
 
 bool checkDeviceExtensionSupport(VkPhysicalDevice device);
 

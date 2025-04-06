@@ -2,8 +2,8 @@
 
 #include "defines.h"
 #include "math.h"
-#include "vertex.h"
 #include "string.h"
+#include "vertex.h"
 
 void createImageViews(App *pApp);
 

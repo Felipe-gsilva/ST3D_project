@@ -1,6 +1,6 @@
 # ST3D_project
 ## My first ever Vulkan application.
-A simple (until now) usage of Vulkan API, with GLFW as window handler and old glsl for shadering.
+A simple usage of Vulkan API, with GLFW as window handler and old glsl for shadering.
 
 ## Compiling the code
 I'm using cmake, so it must be really easy to run this application

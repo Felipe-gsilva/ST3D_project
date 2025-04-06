@@ -21,54 +21,49 @@
 
 #define UINT_MAX 800
 
+#include "math.h"
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
-#include <vulkan/vulkan_core.h>
-#include <vulkan/vulkan.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include "math.h"
+#include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
 
 extern const bool enableValidationLayers;
 extern const char *validationLayers[];
 extern const u32 validationLayerCount;
 extern const int MAX_FRAMES_IN_FLIGHT;
 extern u32 currentFrame;
+
 VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
     VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
     VkDebugUtilsMessageTypeFlagsEXT messageType,
-    const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
-    void *pUserData);
+    const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData, void *pUserData);
 
-typedef struct ShaderFile
-{
+typedef struct ShaderFile {
   size_t size;
   char *code;
 } ShaderFile;
 
-typedef struct Logger
-{
+typedef struct Logger {
   FILE *file;
   u32 logLevel;
 } Logger;
 
-typedef struct QueueFamilyIndices
-{
+typedef struct QueueFamilyIndices {
   u32 graphicsFamily;
   bool isGraphicsFamilySet;
   u32 presentFamily;
   bool isPresentFamilySet;
 } QueueFamilyIndices;
 
-typedef struct queueCreateInfo
-{
+typedef struct queueCreateInfo {
   VkDeviceQueueCreateInfo queueCreateInfo;
   float *pQueuePriorities;
 } queueCreateInfo;
 
-typedef struct SwapChainSupportDetails
-{
+typedef struct SwapChainSupportDetails {
   VkSurfaceCapabilitiesKHR capabilities;
   VkSurfaceFormatKHR *formats;
   u32 formatCount;
@@ -77,8 +72,7 @@ typedef struct SwapChainSupportDetails
   VkExtent2D *extent;
 } SwapChainSupportDetails;
 
-typedef struct App
-{
+typedef struct App {
   GLFWwindow *window;
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
@@ -116,4 +110,3 @@ typedef struct App
   VkBuffer vertexBuffer;
   VkDeviceMemory vertexBufferMemory;
 } App;
-
